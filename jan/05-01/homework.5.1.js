@@ -25,6 +25,7 @@ roundup(76788.7);
 roundup(-9.78);
 roundup(43.342);
 rounddown(53.500);
+rounddown(0.5);
 
 
 // b. Round down
