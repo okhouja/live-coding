@@ -39,6 +39,8 @@ rounddown(326.76);
 rounddown(76788.7);
 rounddown(-9.78);
 rounddown(28.329);
+rounddown(53.500);
+rounddown(0.5);
 
 // Strings and Numbers
 // 1. Concatenation.
