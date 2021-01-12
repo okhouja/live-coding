@@ -44,8 +44,8 @@ console.log("--------Exercise---3----");
 // calcLifetimeSupply(40, 3) ➞ "The snack company should provide you with 65,745 units, until you are a ripe old age of 100. Happy snacking!"
 
 const calcLifetimeSupply = (age, amount) => {
-    const maxAge = 100;
     const yearsday = 365;
+    const maxAge = 100;    
     const result = (maxAge - age) * yearsday * amount;
     console.log(
       `The snack company should provide you with ${result} of Junk food, until you Die. :) Happy snacking!`);
