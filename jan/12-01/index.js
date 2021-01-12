@@ -89,6 +89,9 @@ console.log("--------Exercise---5----");
 
 // countOccurrences("this is a string", "i") ➞ 3
 
+const countOccurrences = ["this is a string", "i"];
+console.log(countOccurrences.length);
+
 console.log("--------Exercise----6---");
 /*  draw this shapes in your console
 First shape
