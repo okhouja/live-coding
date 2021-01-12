@@ -67,13 +67,18 @@ console.log("--------Exercise----4---");
 // monthName(12) ➞ "December"
 // monthName(6) ➞ "June"
 
-const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
-function monthName(months) {
-    console.log(months);
+let months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+function monthName(monthnum) {
+    console.log( months[monthnum - 1]);
 }
 
 monthName(2);
-console.log(months[3]);
+monthName(9);
+monthName(7);
+monthName(8);
+monthName(5);
+monthName(1);
+
 
 console.log("--------Exercise---5----");
 // Try to do it by yourself and don't look in yesterday solution. I trust you :)
