@@ -76,7 +76,7 @@ const print = (str) => {
     //             a.toUpperCase() => A
     console.log(chrArr[i].toUpperCase());
   }
-  const names = ["Omar", "nancy"];
+  const names = ["omar", "nancy"];
   // names[0][0]
   let str = "";
   for (let i = 0; i < names.length; i++) {

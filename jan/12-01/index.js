@@ -7,6 +7,15 @@ console.log("--------Exercise-------");
 // isLEQZero(0) ➞ true
 // isLEQZero(-4) ➞ true
 // isLEQZero(10) ➞ false
+function isLEQZero(num) {
+    return num <= 0 ? "true" : "false";
+}
+
+console.log(isLEQZero(3));
+console.log(isLEQZero(0));
+console.log(isLEQZero(-4));
+console.log(isLEQZero(10));
+
 console.log("--------Exercise-------");
 
 //  Dog Years. Create a function which calculates how old a dog is in dog years. The function should accept one argument that is the dog's age in human years.
