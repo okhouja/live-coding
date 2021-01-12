@@ -25,6 +25,13 @@ console.log("--------Exercise-------");
 
 // dogAge(4) ➞ "Your doggy is 28 years old in dog years!"
 
+function dogage(age) {
+    console.log(`Your doggy is ${age* 7} years old in dog years!`);
+    
+}
+dogage(4);
+dogage(6);
+
 console.log("--------Exercise-------");
 
 //  A Lifetime Supply...
