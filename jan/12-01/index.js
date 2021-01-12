@@ -43,6 +43,11 @@ console.log("--------Exercise-------");
 
 // calcLifetimeSupply(40, 3) ➞ "The snack company should provide you with 65,745 units, until you are a ripe old age of 100. Happy snacking!"
 
+for (let i = 1 ; i <= 100; i++) {
+    ;
+
+}
+
 console.log("--------Exercise-------");
 //  Number to Month Name
 // Create a function that takes a number (from 1 to 12) and returns its corresponding month name as a string.
@@ -55,6 +60,13 @@ console.log("--------Exercise-------");
 // monthName(3) ➞ "March"
 // monthName(12) ➞ "December"
 // monthName(6) ➞ "June"
+
+let months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+function monthName(months){
+      console.log([months]);
+}
+monthName(2);
+console.log(months[3])
 
 console.log("--------Exercise-------");
 // Try to do it by yourself and don't look in yesterday solution. I trust you :)
