@@ -175,20 +175,34 @@ T
 TT
 TTT
 TTTT
-Second shape
-****
-***
-**
-*
-Third shape
-1
-12
-123
-1234
-12345
-Bounce: Forth shape
-Be creative and show us your Artistic side
 */
+
+const shapesCountu = () => {
+  let text;        
+  for (let i = 0; i <= 4; i++) {
+    text = "T";            
+    for (let j = 1; j <= i; j++) {
+      text += j;
+    }
+    console.log(text);
+  }
+};
+shapesCountu();
+
+// Second shape
+// ****
+// ***
+// **
+// *
+// Third shape
+// 1
+// 12
+// 123
+// 1234
+// 12345
+// Bounce: Forth shape
+// Be creative and show us your Artistic side
+// */
 
 console.log("--------Exercise---7----");
 /*  Finish the following function so it outputs looks like this:
