@@ -178,14 +178,15 @@ TTTT
 */
 
 const shapesCountu = () => {
-  let text;        
+  let text= "";        
   for (let i = 0; i <= 4; i++) {
-    text = "T";            
-    for (let j = 1; j <= i; j++) {
-      text += j;
-    }
-    console.log(text);
+    
+    text += "T"; 
+    
+   
+    
   }
+  console.log(text);
 };
 shapesCountu();
 
