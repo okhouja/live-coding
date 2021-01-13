@@ -197,23 +197,39 @@ console.log("--------Exercise---7----");
 123
 1234
 12345
- const numbersCount = () => {
+*/
+
+
+const numbersCountd = () => {
+  let text;        
   for (let i = 0; i <= 5; i++) {
-    // something
+    text = "";            
     for (let j = 1; j <= i; j++) {
-        // something
+      text += j;
     }
-      // something
+    console.log(text);
   }
 };
-numbersCount();
-Bonus: create another function by doing some changes to the previous function in order to have the following outputs :
-  12345
-  1234
-  123
-  12
-  1
-*/
+numbersCountd();
+
+// numbersCount();
+//  const numbersCount = () => {
+//   for (let i = 0; i <= 5; i++) {
+//     // something
+//     for (let j = 1; j <= i; j++) {
+//         // something
+//     }
+//       // something
+//   }
+// };
+// numbersCount();
+// Bonus: create another function by doing some changes to the previous function in order to have the following outputs :
+//   12345
+//   1234
+//   123
+//   12
+//   1
+// */
 
 const numbersCount = () => {
   let text;
