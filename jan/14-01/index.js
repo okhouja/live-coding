@@ -1,7 +1,7 @@
 // let, const, var
 let x = 10;
 const personalId = 2525252; // ho
-var mainAdd = "Berlin";
+var mainAdd = "Hamburg";
 // strings
 //         012345567910
 let str = "This is a long.";
@@ -28,7 +28,7 @@ console.log("bool = ", bool);
 let check = 12 < 20;
 console.log(1 == 100);
 let str1 = "Hi ";
-let str2 = "I am Hadi";
+let str2 = "I am Omar";
 console.log("check =", check);
 console.log(str1 + str2);
 // conditions (===, !==, >=, <=, >, <)
@@ -62,7 +62,7 @@ console.log(Math.floor(num1)); //33
 console.log(Math.ceil(num1)); //34
 // -3 -2 -1 0 1 2 3
 let str3 = "Hi";
-let userName = "Hadi ";
+let userName = "Omar ";
 let lastName = "Nsreeny     ";
 console.log(str3.trim());
 console.log(str3.length);
@@ -70,9 +70,9 @@ console.log(str3.length);
 let randomNum = Math.floor(Math.random() * str3.length);
 console.log(str3[randomNum]); //
 // Js methods for str (.trim , .length , .includes , .split , .toUpperCase , .toLowerCase)
-userName = "Hadi    ";
-lastName = "Nsreeny     ";
-//                Nsreeny.toUpperCase()
+userName = "Omar    ";
+lastName = "Khouja     ";
+//                Khouja.toUpperCase()
 let newLastName = lastName.trim().toUpperCase();
 console.log(newLastName);
 console.log(lastName);
