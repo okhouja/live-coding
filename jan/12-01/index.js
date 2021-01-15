@@ -16,7 +16,7 @@ console.log("--------Exercise---1----");
 // console.log(isLEQZero(3)); // end of way one
 
 function isLEQZero(num) {
-    console.log(num <= 0) ;
+  console.log(num <= 0);
 }
 
 isLEQZero(3);
@@ -41,14 +41,13 @@ console.log("--------Exercise---2----");
 // console.log(dogAge(4));
 
 const dogAge = (age) => {
-  console.log(`Your doggy is ${age* 7} years old in dog years!`);
-}
+  console.log(`Your doggy is ${age * 7} years old in dog years!`);
+};
 
 dogAge(5);
 
 function dogage(age) {
-    console.log(`Your doggy is ${age* 7} years old in dog years!`);
-    
+  console.log(`Your doggy is ${age * 7} years old in dog years!`);
 }
 dogage(4);
 dogage(6);
@@ -75,12 +74,13 @@ console.log("--------Exercise---3----");
 // console.log(calcLifetimeSupply(40, 3));
 
 const calcLifetimeSupply = (age, amount) => {
-    const yearsday = 365;
-    const maxAge = 100;    
-    const result = (maxAge - age) * yearsday * amount;
-    console.log(
-      `The snack company should provide you with ${result} of Junk food, until you Die. :) Happy snacking!`);
-    }
+  const yearsday = 365;
+  const maxAge = 100;
+  const result = (maxAge - age) * yearsday * amount;
+  console.log(
+    `The snack company should provide you with ${result} of Junk food, until you Die. :) Happy snacking!`
+  );
+};
 
 calcLifetimeSupply(25, 2);
 calcLifetimeSupply(40, 3);
@@ -137,7 +137,6 @@ console.log(monthName(1));
 // monthName(5);
 // monthName(1);
 
-
 console.log("--------Exercise---5----");
 // Try to do it by yourself and don't look in yesterday solution. I trust you :)
 // Count Occurrences.
@@ -178,13 +177,9 @@ TTTT
 */
 
 const shapesCountu = () => {
-  let text= "";        
+  let text = "";
   for (let i = 0; i <= 4; i++) {
-    
-    text += "T"; 
-    
-   
-    
+    text += "T";
   }
   console.log(text);
 };
@@ -214,11 +209,10 @@ console.log("--------Exercise---7----");
 12345
 */
 
-
 const numbersCountd = () => {
-  let text;        
+  let text;
   for (let i = 0; i <= 5; i++) {
-    text = "";            
+    text = "";
     for (let j = 1; j <= i; j++) {
       text += j;
     }
@@ -297,7 +291,6 @@ console.log("--------Exercise----9---");
 // passwordGen()  ➞ Y3mI9x7bvPY86T?oM§hIbgh!MLwA77N
 // passwordGen()  ➞ Oy$tkBGoo5fg§mO4AdV&Kh8XXZR4d7K
 // passwordGen()  ➞ v0ZwDrn@hfI€kOKWH§k6kqub6zfpuyP
-
 
 const passwordGen = () => {
   let characters = [
