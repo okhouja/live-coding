@@ -190,6 +190,7 @@ shapesCountu();
 // ***
 // **
 // *
+
 // Third shape
 // 1
 // 12
@@ -231,6 +232,7 @@ numbersCountd();
 //       // something
 //   }
 // };
+
 // numbersCount();
 // Bonus: create another function by doing some changes to the previous function in order to have the following outputs :
 //   12345
