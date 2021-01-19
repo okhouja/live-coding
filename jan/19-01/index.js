@@ -106,7 +106,7 @@ const rep = (item, times) => {
   }
   return result;
 };
-console.log(rep("Hadi", 3));
+console.log(rep("Omar", 3));
 
 // The Greater Numbers.
 //  Create a function which accepts two arguments:
