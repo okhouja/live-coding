@@ -135,13 +135,15 @@ console.log(findGreatest([3, 4, 12, 44], 3));
 const findVowels = (str) => {
   let Vowels = [];
   for (let i = 0; i < Vowels.length; i++) {
-    if ((str = findVowels.includes("a, e, i, o, u")));
+    if ((str = findVowels.indexOf("a, e, i, o, u")));
     console.log(findVowels);
   }
 
-  console.log(4);
+  console.log(str);
 };
 findVowels("this is a string");
+let findbow = "this is a string";
+console.log(findbow.indexOf("a", "e", "i", "o", "u"));
 
 /* No Duplicates!
   A set is a collection of unique items. A set can be formed from an array by removing all duplicate items. Create a program which transforms an array into a set of unique values. See the examples below. Example:
