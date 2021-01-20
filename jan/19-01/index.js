@@ -129,21 +129,76 @@ const findGreatest = (arr, num) => {
 
 console.log(findGreatest([3, 4, 12, 44], 3));
 
+let originalArray = [
+  "JavaScript",
+  "will",
+  "turn",
+  "your",
+  "dreams",
+  "into",
+  "Reality",
+];
+let shallowCopyOg = originalArray.slice(-1); //
+
+console.log(shallowCopyOg);
+console.log(originalArray);
+
+/*Dictionary. (take your time on this pls ) also as tip you can use .includes()
+ Create a function that takes an initial string and an array of words, and returns a filtered array of the words that start with the same letters as the initial string.
+Notes:
+If none of the words match, return an empty array.
+Keep the filtered array in the same relative order as the original array of words.
+Examples:
+dictionary(“bu”, [“button”, “breakfast”, “border”]) ➞ [“button”]
+dictionary(“tri”, [“triplet”, “tries”, “trip”, “piano”, “tree”]) ➞ [“triplet”, “tries”, trip”]
+dictionary(“beau”, [“pastry”, “delicious”, “name”, “boring”]) ➞ [] */
+
+const dictionary = (str, arr) => {
+  let result = [];
+  let userInput = str.toLowerCase();
+  for (let i = 0; i < arr.length; i++) {
+    let currentValue = arr[i].toLowerCase();
+
+    if (currentValue.includes(userInput)) {
+      result.push(currentValue);
+    }
+  }
+  return result;
+};
+console.log(dictionary("bo", ["cool", "Bool", "nool", "doOOol"]));
+console.log(dictionary("bolll", ["cool", "nool", "doOOol"]));
+// other way to do it :)
+const dictionary2 = (str, arr) => {
+  let result = [];
+  let userInput = str.toLowerCase();
+  for (let i = 0; i < arr.length; i++) {
+    let currentValue = arr[i].toLowerCase();
+    let shortStr = currentValue.substring(0, userInput.length);
+    if (shortStr == userInput) {
+      result.push(currentValue);
+    }
+  }
+  return result;
+};
+
+console.log(dictionary2("bo", ["cool", "Bool", "nool", "doOOol"])); // [ 'bool' ]
+console.log(dictionary2("bo", ["ooBol", "nool", "doOOol"])); // empty array
+
 // AEIOU:
 // Vowels. Create a function that takes a string in its parameters and counts the number of vowels (i.e. in English, “a, e, i, o, u”) in the string.
 // i.e. findVowels(“this is a string”) ➞ 4
-const findVowels = (str) => {
-  let Vowels = [];
-  for (let i = 0; i < Vowels.length; i++) {
-    if ((str = findVowels.indexOf("a, e, i, o, u")));
-    console.log(findVowels);
-  }
+// const findVowels = (str) => {
+//   let Vowels = [];
+//   for (let i = 0; i < Vowels.length; i++) {
+//     if ((str = findVowels.indexOf("a, e, i, o, u")));
+//     console.log(findVowels);
+//   }
 
-  console.log(str);
-};
-findVowels("this is a string");
-let findbow = "this is a string";
-console.log(findbow.indexOf("a", "e", "i", "o", "u"));
+//   console.log(str);
+// };
+// findVowels("this is a string");
+// let findbow = "this is a string";
+// console.log(findbow.indexOf("a", "e", "i", "o", "u"));
 
 /* No Duplicates!
   A set is a collection of unique items. A set can be formed from an array by removing all duplicate items. Create a program which transforms an array into a set of unique values. See the examples below. Example:
@@ -156,19 +211,3 @@ console.log(findbow.indexOf("a", "e", "i", "o", "u"));
 //     let str =
 //     return str.filter              }
 //  }
-
-/*Dictionary. (take your time on this pls ) also as tip you can use .includes()
- Create a function that takes an initial string and an array of words, and returns a filtered array of the words that start with the same letters as the initial string.
-Notes:
-If none of the words match, return an empty array.
-Keep the filtered array in the same relative order as the original array of words.
-Examples:
-dictionary(“bu”, [“button”, “breakfast”, “border”]) ➞ [“button”]
-dictionary(“tri”, [“triplet”, “tries”, “trip”, “piano”, “tree”]) ➞ [“triplet”, “tries”, trip”]
-dictionary(“beau”, [“pastry”, “delicious”, “name”, “boring”]) ➞ [] */
-
-const dictionary = (str) => {
-  for (let i = 0; i < str.length; i++) {
-    if (str) [i].includes;
-  }
-};
