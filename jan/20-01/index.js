@@ -32,7 +32,7 @@ console.log(bool);
 // will start searching backwards
 // -1 means nothing been found
 let arr4 = ["Hi", "I", "you", "you", "i"];
-console.log(arr4.lastIndexOf("Hadi"));
+console.log(arr4.lastIndexOf("Omar"));
 console.log(arr4.lastIndexOf("you")); // 3
 console.log(arr4.indexOf("you")); // 2
 
