@@ -63,7 +63,7 @@ console.log(Math.ceil(num1)); //34
 // -3 -2 -1 0 1 2 3
 let str3 = "Hi";
 let userName = "Omar ";
-let lastName = "Nsreeny     ";
+let lastName = "Khouja     ";
 console.log(str3.trim());
 console.log(str3.length);
 //                           floor (0.444 * 2)
