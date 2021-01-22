@@ -29,7 +29,7 @@ function halloUser() {
 login();
 // call stack
 
-// Never do this one 😏
+// Never do this one 😏 😏 😏
 // function one() {
 //   two();
 // }
