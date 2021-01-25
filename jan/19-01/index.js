@@ -15,12 +15,16 @@ cityName[2] = "Dubai";
 
 console.log(cityName);
 
+console.log("======.push()=======");
+
 // .push()
 // add an item
 cityName.push("Hi");
 cityName.push("Hi");
 cityName.push("Cool");
 console.log(cityName);
+
+console.log("======.pop()=======");
 // .pop()
 // remove an item
 cityName.pop();
@@ -30,22 +34,29 @@ let removedItem = cityName.pop();
 console.log(cityName);
 console.log(removedItem);
 
+console.log("======.unshift()=======");
 // .unshift()
 // add an item to the beginning
 cityName.unshift("🍀");
 console.log(cityName);
+
+console.log("======.shift()=======");
 //  .shift()
 // remove an item to the beginning
 let removeEle = cityName.shift();
 console.log(cityName);
 console.log(removeEle);
 //const names = ["Zain", "Nancy", "Olga"];
+
+console.log("======.indexof()=======");
 // .indexOf()
 // Find the index of an item
 console.log(names.indexOf("Nancy"));
 let pos = names.indexOf("Nancy");
 // console.log(typeof pos);
 let n = 0;
+console.log("======.splice()=======");
+
 // // .splice()
 // // remove an item by the index number
 let removedItemFromIndex = names.splice(pos, n);
@@ -55,14 +66,19 @@ for (let i = 0; i < names.length; i++) {
   console.log(names[i]);
 }
 let str = "Hi this is me 😎";
+console.log("======.split()=======");
+
 // .split()
 // divide a string into an array
 let newArr = str.split(" ");
 console.log(newArr);
+console.log("======.join()=======");
+
 // .join()
 // create a string from an array
 let newStr = newArr.join(" ");
 console.log(newStr);
+console.log("======.concat()=======");
 
 // .concat()
 // merge two (or more) arrays
@@ -78,6 +94,8 @@ fakeCopy.push("Dubai");
 console.log(add);
 fakeCopy.pop();
 console.log(add);
+console.log("======.slice()=======");
+
 // .slice()
 // to make a shallow copy
 let shallowCopy = add.slice(1, 3);

@@ -36,6 +36,7 @@ console.log(arr4.lastIndexOf("Omar"));
 console.log(arr4.lastIndexOf("you")); // 3
 console.log(arr4.indexOf("you")); // 2
 
+console.log("======.tofill()=======");
 // .fill()
 // (what,from,to) => (0,2,3)
 let arr5 = [22, 34, 6, 7, 4, 4, 3];
