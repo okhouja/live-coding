@@ -69,6 +69,11 @@ console.log(str3.length);
 //                           floor (0.444 * 2)
 let randomNum = Math.floor(Math.random() * str3.length);
 console.log(str3[randomNum]); //
+
+console.log(
+  "======(.trim , .length , .includes , .split , .toUpperCase , .toLowerCase)======="
+);
+
 // Js methods for str (.trim , .length , .includes , .split , .toUpperCase , .toLowerCase)
 userName = "Omar    ";
 lastName = "Khouja     ";
