@@ -199,6 +199,18 @@ console.log(toCamelCase("cool_fun_things"));
 // Create a program that changes a given array by adding 1 to each odd integer and subtracting 1 from each even integer. Examples:
 // [3, 5, 2, 4] ➞ expected output: [4, 6, 1, 3]
 // [6, 9, 10, 20] ➞ expected output: [5, 10, 9, 19]
+// const oddOrEven = (arr) => {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 == 0) sum += arr[i];
+//     console.log(sum);
+//   }
+// };
+const coolNumbers2 = [4, 6, 1, 3];
+const oddOrEven = coolNumbers2.find((num) => num % 2 == 0) => num+1;
+console.log(oddOrEven);
+
+// console.log(oddOrEven(3, 5, 2, 4));
 
 // how many chr in a str(not case sens)
 // howManyStr("I like pizza","i") -> 3
