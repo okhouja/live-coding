@@ -185,6 +185,8 @@ const sumNumbers = (...args) => {
   });
 };
 console.log(sumNumbers(25, 25, 20));
+console.log("======6th_Assignment======toCamelCase====");
+
 // toCamelCase
 const toCamelCase = (str) => {
   // cool_fun -> coolFun
@@ -197,7 +199,7 @@ const toCamelCase = (str) => {
 console.log(toCamelCase("cool_fun_things"));
 
 // hackerSpeak
-console.log("======6th_Assignment======hackerSpeak====");
+console.log("======7th_Assignment======hackerSpeak====");
 
 const hackSpeak = (str) => {
   return str
@@ -223,7 +225,7 @@ const hackSpeak = (str) => {
 };
 console.log(hackSpeak("I like javaScript"));
 
-console.log("======7th_Assignment======Odds and Evens====");
+console.log("======8th_Assignment======Odds and Evens====");
 
 // Odds and Evens.
 // Create a program that changes a given array by adding 1 to each odd integer and subtracting 1 from each even integer. Examples:
@@ -244,7 +246,7 @@ console.log(oddOrEven2([2, 4, 5, 6, 3]));
 
 console.log(oddOrEven(3, 5, 2, 4));
 
-console.log("======8th_Assignment=======");
+console.log("======9th_Assignment=======");
 
 // how many chr in a str(not case sens)
 // howManyStr("I like pizza","i") -> 3
