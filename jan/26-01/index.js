@@ -171,6 +171,7 @@ const coolNumbers = [1, 2, 7, 43, 5, 6];
 const biggerThanFive = coolNumbers.find((num) => num >= 5);
 console.log(biggerThanFive);
 //  Maybe more 😏
+console.log("======5th_Assignment=======");
 
 // sum numbers
 // Write a function which accepts any amount of numbers and return the sum of their addition
@@ -195,22 +196,64 @@ const toCamelCase = (str) => {
 };
 console.log(toCamelCase("cool_fun_things"));
 // hackerSpeak
+// hackerSpeak
+console.log("======6th_Assignment=======");
+
+const hackSpeak = (str) => {
+  return str
+    .toLowerCase()
+    .split("")
+    .map((chr) => {
+      switch (chr) {
+        case "a":
+          return "4";
+        case "e":
+          return "3";
+        case "i":
+          return "1";
+        case "o":
+          return "0";
+        case "s":
+          return "5";
+        default:
+          return chr;
+      }
+    })
+    .join("");
+};
+console.log(hackSpeak("I like javaScript"));
+
+console.log("======7th_Assignment=======");
+
 // Odds and Evens.
 // Create a program that changes a given array by adding 1 to each odd integer and subtracting 1 from each even integer. Examples:
 // [3, 5, 2, 4] ➞ expected output: [4, 6, 1, 3]
 // [6, 9, 10, 20] ➞ expected output: [5, 10, 9, 19]
-// const oddOrEven = (arr) => {
-//   let sum = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] % 2 == 0) sum += arr[i];
-//     console.log(sum);
-//   }
-// };
-const coolNumbers2 = [4, 6, 1, 3];
-const oddOrEven = coolNumbers2.find((num) => num % 2 == 0) => num+1;
-console.log(oddOrEven);
+
+// using ...
+const oddOrEven = (...args) => {
+  return args.map((item) => (item % 2 == 0 ? ++item : --item));
+};
+console.log(oddOrEven(2, 4, 5, 6, 7));
+
+// using array
+const oddOrEven2 = (arr) => {
+  return arr.map((item) => (item % 2 == 0 ? ++item : --item));
+};
+console.log(oddOrEven2([2, 4, 5, 6, 3]));
 
 // console.log(oddOrEven(3, 5, 2, 4));
 
+console.log("======8th_Assignment=======");
+
 // how many chr in a str(not case sens)
 // howManyStr("I like pizza","i") -> 3
+const howManyStr = (str, chr) => {
+  return str
+    .toLowerCase()
+    .split("")
+    .filter((letter) => letter == chr).length;
+};
+
+console.log(howManyStr("I like pizza", "i"));
+console.log(howManyStr("I like pizza", "p"));
