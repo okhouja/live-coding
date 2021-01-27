@@ -128,7 +128,7 @@ console.log(average(1, 2));
 console.log(average(1, 3, 6, 10));
 console.log(average(12, 14, 16));
 
-console.log("======.map=======");
+console.log("=*=*=*=*=*= .map =*=*=*=*=*=*=");
 
 // .map
 // Converting an array to a different array: `Array.prototype.map(<function>)`
@@ -171,7 +171,7 @@ const coolNumbers = [1, 2, 7, 43, 5, 6];
 const biggerThanFive = coolNumbers.find((num) => num >= 5);
 console.log(biggerThanFive);
 //  Maybe more 😏
-console.log("======5th_Assignment=======");
+console.log("======5th_Assignment======sum numbers====");
 
 // sum numbers
 // Write a function which accepts any amount of numbers and return the sum of their addition
@@ -195,9 +195,9 @@ const toCamelCase = (str) => {
   return result.join("");
 };
 console.log(toCamelCase("cool_fun_things"));
+
 // hackerSpeak
-// hackerSpeak
-console.log("======6th_Assignment=======");
+console.log("======6th_Assignment======hackerSpeak====");
 
 const hackSpeak = (str) => {
   return str
@@ -223,7 +223,7 @@ const hackSpeak = (str) => {
 };
 console.log(hackSpeak("I like javaScript"));
 
-console.log("======7th_Assignment=======");
+console.log("======7th_Assignment======Odds and Evens====");
 
 // Odds and Evens.
 // Create a program that changes a given array by adding 1 to each odd integer and subtracting 1 from each even integer. Examples:
@@ -242,7 +242,7 @@ const oddOrEven2 = (arr) => {
 };
 console.log(oddOrEven2([2, 4, 5, 6, 3]));
 
-// console.log(oddOrEven(3, 5, 2, 4));
+console.log(oddOrEven(3, 5, 2, 4));
 
 console.log("======8th_Assignment=======");
 
