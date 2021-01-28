@@ -1,4 +1,6 @@
-console.log("____________________");
+console.log("_-----*_*-----_");
+console.log("======1st_Assignment=======");
+
 // Count characters only
 // Create a function will calculate how many times empty space occurred in a given string by the user and print out only the characters number
 // Example :
