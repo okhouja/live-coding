@@ -16,12 +16,15 @@ const emptySpaces = (str) => {
 };
 console.log(emptySpaces("Hi i"));
 console.log(emptySpaces("i    Hi i"));
+// another way
 const emptySpacesAdvancedVersion = (str) => {
   return str.split("").filter((chr) => chr != " ").length;
 };
 console.log(emptySpacesAdvancedVersion("Hi  "));
-console.log("____________________");
-// Need more money
+
+console.log("_-----*_*-----_");
+console.log("======2nd_Assignment=======");
+/* Need more money
 // Create a function that will receive a (user name , salary and his/her kids names)
 // If the user has one kid subtract 30% taxes from the salary
 // For two kids subtract 25% and 20% for more than two.
@@ -29,7 +32,7 @@ console.log("____________________");
 // Print out the result in a good formated way.
 // Examples :
 // salaryCalculator("Fabi", 5000, "Zain", "Uschi");
-// salaryCalculator("Olga", 4055, "Zain");
+// salaryCalculator("Olga", 4055, "Zain");*/
 
 const salaryCalculator = (userName, salary, ...kids) => {
   let netto, percentValue;
@@ -52,7 +55,8 @@ const salaryCalculator = (userName, salary, ...kids) => {
 console.log(salaryCalculator("Fabi", 5000, "Zain", "Uschi"));
 console.log(salaryCalculator("Olga", 7000, "Zain"));
 console.log(salaryCalculator("Jack", 200));
-console.log("____________________");
+console.log("_-----*_*-----_");
+console.log("======3nd_Assignment=======");
 // Call me
 // Create a function that receive a text from user and check if the user has entered a phone number, and print that out.
 // Note : phone number should be within the German network starts with (030 or 017) only and has 7 digits after the prefix number
@@ -80,7 +84,8 @@ console.log(phone("hi 0302220000"));
 console.log(phone("hi 030222Q000"));
 console.log(phone("hi "));
 
-console.log("____________________");
+console.log("_-----*_*-----_");
+console.log("======4th_Assignment=======");
 // IsBank
 // Write a function that checks whether the user has entered a valid German bank account.
 // Note: German bank accounts should starts with DE and has 20 number after that.
@@ -114,7 +119,8 @@ const bankChecker = (str) => {
 };
 console.log(bankChecker("Hi my bank account is "));
 console.log(bankChecker("Hi my DE22000022220000220022 account is "));
-console.log("____________________");
+console.log("_-----* ^ *-----_");
+console.log("======5th_Assignment=======");
 // This is crazy
 // Create a function that looks inside a givin string if it has the word (JavaScript) if so print "I know it's crazy 😉".
 // Examples :
@@ -128,7 +134,8 @@ const checkStr = (str) => {
 };
 console.log(checkStr("Hi my name is HADI"));
 console.log(checkStr("I like JaVAScriPT"));
-console.log("____________________");
+console.log("_-----* ^ *-----_");
+console.log("======6th_Assignment=======");
 // Tell me my age
 // Create a function that calculates the user age e.g. 2000 -> 20.
 // tip try mdn for this one aka need some research
@@ -147,7 +154,8 @@ const age = (year) => {
 };
 console.log(age("1929Hadi"));
 console.log(age(1200));
-console.log("____________________");
+console.log("_-----* - *-----_");
+console.log("======7th_Assignment=======");
 // Seasons
 // Create a function that accepts a text from user and check if the user has entered a month name, if so print out that month and in which season it is.
 // I will be nice again to you and offer the arrays 😉
@@ -207,7 +215,8 @@ const monthCheck = (str) => {
 console.log(monthCheck("I love June"));
 console.log(monthCheck("We need Kartoffel"));
 
-console.log("____________________");
+console.log("_-----* - *-----_");
+console.log("======8th_Assignment=======");
 // Student level check
 // Create a function will calculate a student degrees for 6 subjects, if the average was less than 70 will print (F)
 // Over 70 and less than 80 (C)
@@ -241,7 +250,8 @@ function average(...notes) {
 
 console.log(average(99, 44, 44, 80, 80, 98, 89));
 
-console.log("____________________");
+console.log("_-----* - *-----_");
+console.log("======9th_Assignment=======");
 // Tell me more
 // Create a function that accepts the (user name, age, address and unlimited number of activities the user enjoy doing)
 // print all the user input adding the greeting part and more text turning that input into a readable text.
@@ -263,7 +273,8 @@ function userData(userName, age, address, ...activities) {
 console.log(userData("Zain", 22, "Kurfürstendamm", "dance", "party"));
 console.log(userData("Olga", 40, "potsdamer platz", "party"));
 console.log(userData("Nancy", 33, "viktoria luise platz", "swimming"));
-console.log("____________________");
+console.log("_-----* - *-----_");
+console.log("======10th_Assignment=======");
 // Validate Email
 // Create a function that takes a string, checks if it’s a valid email address, and then accordingly returns either true or false.
 // The string must contain an “@” character.
@@ -277,16 +288,18 @@ console.log("____________________");
 // validate("@hadi-nsreeny.com") -> Sorry, invalid email address
 
 function validate(email) {
-  let atPos;
-  let dotPos;
-  for (let i = 0; i < email.length; i++) {
-    if (email[i] === "@") {
-      atPos = i;
-    }
-    if (email[i] === ".") {
-      dotPos = i;
-    }
-  }
+  //   let atPos;
+  //   let dotPos;
+  //   for (let i = 0; i < email.length; i++) {
+  //     if (email[i] === "@") {
+  //       atPos = i;
+  //     }
+  //     if (email[i] === ".") {
+  //       dotPos = i;
+  //     }
+  //   }
+  let atPos = email.indexOf("@");
+  let dotPos = email.lastIndexOf(".");
   if (atPos > 0 && dotPos > atPos) {
     return `${email} is valid.`;
   } else {
