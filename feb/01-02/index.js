@@ -71,6 +71,7 @@ console.log(add());
 const sum = ((x, y) => {
   return x + y;
 })(3, 4);
+
 console.log(sum);
 
 // Write a function add that uses a closure that performs addition on arguments in two separate function calls.
@@ -99,32 +100,71 @@ let all = 3;
 console.log(all);
 
 /* Write a function that accepts several parameters and calculates the number of money that will have been saved as pension until a person retires. The function should be self invoked and should have the following parameters:
-  The current age of the person // e.g. 40
-  The retirement age of the person // e.g. 60
-  The monthly wage the person earns // e.g. 1000
-  The percentage (as integer) that the person saves each month // e.g. 10%
-  If the person has already retired then the message 'You're already retired!' should be printed. If not, then the program should calculate how many years remain until the person retires, the monthly income and take a specific percent of this income every month as saved money.
-  Example: A lady is 40 years old, she retires at 65, she earns $2000 per month and she saves the 5% of it. How much money will she have saved until she retires?
-  Output: $30000 */
+The current age of the person // e.g. 40
+The retirement age of the person // e.g. 60
+The monthly wage the person earns // e.g. 1000
+The percentage (as integer) that the person saves each month // e.g. 10%
+If the person has already retired then the message 'You're already retired!' should be printed. If not, then the program should calculate how many years remain until the person retires, the monthly income and take a specific percent of this income every month as saved money.
+Example: A lady is 40 years old, she retires at 65, she earns $2000 per month and she saves the 5% of it. How much money will she have saved until she retires?
+Output: $30000 */
 
-// loops
+((currentAge, retirementAge, monthlyWage, percentage) => {
+  if (currentAge >= retirementAge) {
+    console.log("You are too old");
+  } else {
+    let yearsToSave = retirementAge - currentAge;
+    console.log("Years to go ", yearsToSave);
+    let monthsToSave = yearsToSave * 12;
+    console.log("Months to go ", monthsToSave);
+    let amountSavedByMonth = (monthlyWage * percentage) / 100;
+    let totalSave = amountSavedByMonth * monthsToSave;
+    console.log(
+      `you will go very old in ${yearsToSave}, and you will have ${totalSave} in in your bank`
+    );
+  }
+})(40, 65, 2000, 5);
 
 // if .. else
+// let fat = true;
+// let isNormal = false
+// if (fat) {
+//     if (isNormal){
+//         // this is cool
+//     }
+//   console.log("You need to eat less");
+// } else if (){}
+// else if()
 
 // ternary Operator
 
+// console.log(fat ? "Noo I like food" : null);
+// loops
+
 // trim()
-
+let str = "   hi    ";
+console.log(str.trim());
 // trimEnd()
-
+console.log(str.trimEnd());
 // trimStart()
-
+console.log(str.trimStart());
 // startsWith()
-
+let text = "Hej, it's ME";
+console.log(text.startsWith("we"));
+console.log(text.startsWith("Hej"));
 // endsWith()
-
+console.log(text.endsWith("."));
+console.log(text.endsWith("s ME"));
 // charAt()
-
+let chr = "Ü";
+console.log(chr.charAt(0)); // == console.log(chr[0]);
+console.log(chr[0]);
+// arr[i][0]
+const arr = ["Hadi", "Olga"];
+console.log(arr[0][0] + arr[0][3]);
 // charCodeAt()
 //  will return integer between 0 and 65535 that replaces the UTF-16 code
-// common character codes UTF-16  UTF-8  ASCII   A 00001111
+
+// common character codes UTF-32 UTF-16  UTF-8  ASCII   A 00001111
+
+// ASCII = American Standard Code for Information Interchange
+console.log(chr.charCodeAt(0));
