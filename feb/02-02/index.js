@@ -207,8 +207,6 @@ class: 48 }; */
 //   `${student.firstName} ${student.LastName} a Student in Class ${student.class}`
 // );
 
-// Create a function that returns an object has following output.
-// ABC  -> { A: 1, B: 1, C: 1 }
 console.log("========1st Assignment=======");
 
 /*
@@ -277,3 +275,6 @@ function emptyObj(obj) {
 }
 console.log(emptyObj({}));
 console.log(emptyObj({ a: 1 }));
+
+// Create a function that returns an object has following output.
+// ABC  -> { A: 1, B: 1, C: 1 }
