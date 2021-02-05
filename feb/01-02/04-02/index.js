@@ -57,3 +57,11 @@ function updateRecords(object, id, prop, value) {
 } */
 
 console.log(updateRecords(collection, 5439, "artist", "ABBA"));
+
+// Zodiac sign, write a function that tells the user his/her Zodiac sign. The user should enter only his birthday like dd-mm-yy
+// for farther information check https://en.wikipedia.org/wiki/Zodiac
+// Examples:
+// zodiac("14-02-2002")  -> Aquarius
+// zodiac("10-06-1984")  -> Gemini
+
+// one one cool for 😎
