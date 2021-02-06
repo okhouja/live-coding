@@ -276,6 +276,7 @@ console.log(userData("Olga", 40, "potsdamer platz", "party"));
 console.log(userData("Nancy", 33, "viktoria luise platz", "swimming"));
 console.log("_-----* - *-----_");
 console.log("======10th_Assignment=======");
+
 // Validate Email
 // Create a function that takes a string, checks if it’s a valid email address, and then accordingly returns either true or false.
 // The string must contain an “@” character.
