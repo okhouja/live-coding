@@ -46,6 +46,8 @@ console.log(fun());
 
 // invoking == calling
 // functions that return other function
+// const name = (() => {})();
+
 const add = (() => {
   let counter = 0;
 
