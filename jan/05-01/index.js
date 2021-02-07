@@ -46,6 +46,10 @@ intSum = newNum + int2;
 console.log(intSum);
 let newFloat = parseFloat(int2);
 console.log(newFloat);
+// parseInt(string, radix);
+
+let parNum = parseInt("10110", 2);
+console.log(parNum);
 
 //1. Create two variables.
 // One variable should contain a string value and
