@@ -65,6 +65,7 @@ console.log(add());
 (function () {
   console.log("Hi");
 })();
+// (()=> {})
 (() => {
   console.log("Hi");
 })();
