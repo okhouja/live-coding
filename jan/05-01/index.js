@@ -46,7 +46,14 @@ intSum = newNum + int2;
 console.log(intSum);
 let newFloat = parseFloat(int2);
 console.log(newFloat);
-// parseInt(string, radix);
+/* parseInt(string, radix);
+ The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems).
+
+ ***radix****
+ *  An integer between 2 and 36 that represents the radix (the base in mathematical numeral systems) of the string. Be careful—this does not default to 10! If the radix value is not of the Number type it will be coerced to a Number
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/parseInt */
+let parNum = parseInt("10110", 2);
+console.log(parNum);
 
 let parNum = parseInt("10110", 2);
 console.log(parNum);
