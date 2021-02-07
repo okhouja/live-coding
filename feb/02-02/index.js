@@ -9,9 +9,9 @@
 // keys, properties : value
 // Object Literal
 const obj = {
-  name1: "Hadi",
+  name1: "Omar",
   name2: "Olga",
-  name3: "Zain",
+  name3: "Roger",
 };
 const userObj = {
   name: "Nancy",
