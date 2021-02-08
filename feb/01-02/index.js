@@ -31,7 +31,7 @@ const outerFunction = (x, y) => {
   };
   // console.log(fat);
   //            13        +      14  =    27
-  return innerFunction(x) + innerFunction(y);
+  return innerFunction(x) + innerFunction(y) + innerFunction(4);
 };
 console.log(outerFunction(3, 4));
 //console.log(fat);

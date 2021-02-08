@@ -190,6 +190,39 @@ console.log(getKeysAndValues(objectToArray));
 delete objectToArray.cats;
 console.log(objectToArray);
 
+// Object.hasOwnProperty()
+const objectUserInfo = {
+  userName: "Zain",
+  age: 22,
+};
+console.log(objectUserInfo.hasOwnProperty("add"));
+// Object.seal()
+Object.seal(objectUserInfo);
+
+objectUserInfo.add = "Berlin";
+console.log(objectUserInfo);
+
+// [{},{},{}]
+
+// [[],[],[]]
+/* {
+  ob1:{
+  },
+  ob2:{},
+} */
+
+const hadiData = {
+  name: "Hadi",
+  age: 31,
+  kids: [
+    { name: "Zain", age: 6, class: "1st" },
+    { name: "Anna", age: 11 },
+  ],
+};
+console.log(hadiData.kids[0].age); // 22
+console.log(hadiData.kids[1]["age"]); //  11
+console.log(hadiData.kids[1]); // { name: 'Anna', age: 11 }
+
 /* Create a function that returns an array of the properties of a javascript object.
 
 Given the following object
@@ -197,15 +230,15 @@ const student = {
 firstName: "Zain", 
 lastName: "Oil", 
 class: 48 }; */
-// const student = {
-//   firstName: "Zain",
-//   LastName: "Oil",
-//   class: 48,
-// };
-// console.log(Object.values(student));
-// console.log(
-//   `${student.firstName} ${student.LastName} a Student in Class ${student.class}`
-// );
+const student = {
+  firstName: "Zain",
+  LastName: "Oil",
+  class: 48,
+};
+console.log(Object.values(student));
+console.log(
+  `${student.firstName} ${student.LastName} a Student in Class ${student.class}`
+);
 
 console.log("========1st Assignment=======");
 
@@ -278,3 +311,13 @@ console.log(emptyObj({ a: 1 }));
 
 // Create a function that returns an object has following output.
 // ABC  -> { A: 1, B: 1, C: 1 }
+const countLettersAdc = (str) => {
+  let arr = str.toLowerCase().split("");
+  console.log(arr);
+  let result = arr.reduce((acc, cur) => {
+    acc[cur] = acc[cur] ? acc[cur] + 1 : 1;
+    return acc;
+  }, {});
+  return result;
+};
+console.log(countLettersAdc("tree"));
