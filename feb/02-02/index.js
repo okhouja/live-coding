@@ -143,6 +143,22 @@ const objPro = (obj) => {
 console.log(objPro(person2));
 
 console.log(objPro(person));
+/* Create a function that returns an array of the properties of a javascript object.
+
+Given the following object
+const student = { 
+firstName: "Zain", 
+lastName: "Oil", 
+class: 48 }; */
+// const student = {
+//   firstName: "Zain",
+//   LastName: "Oil",
+//   class: 48,
+// };
+// console.log(Object.values(student));
+// console.log(
+//   `${student.firstName} ${student.LastName} a Student in Class ${student.class}`
+// );
 // Given the following object
 const student = {
   firstName: "Zain",
@@ -223,23 +239,6 @@ console.log(hadiData.kids[0].age); // 22
 console.log(hadiData.kids[1]["age"]); //  11
 console.log(hadiData.kids[1]); // { name: 'Anna', age: 11 }
 
-/* Create a function that returns an array of the properties of a javascript object.
-
-Given the following object
-const student = { 
-firstName: "Zain", 
-lastName: "Oil", 
-class: 48 }; */
-const student = {
-  firstName: "Zain",
-  LastName: "Oil",
-  class: 48,
-};
-console.log(Object.values(student));
-console.log(
-  `${student.firstName} ${student.LastName} a Student in Class ${student.class}`
-);
-
 console.log("========1st Assignment=======");
 
 /*
@@ -289,8 +288,13 @@ function sumTotalScrabble(arr) {
   }
   return total;
 }
-// other way soon
 console.log(sumTotalScrabble(scrabble));
+
+// other way soon
+const sumTotalScrabbleAdvancedVersion = (arr) => {
+  return arr.reduce((acc, cur) => acc + cur.score, 0);
+};
+console.log(sumTotalScrabbleAdvancedVersion(scrabble));
 
 console.log("========3rd Assignment=======");
 
