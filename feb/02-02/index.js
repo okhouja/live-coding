@@ -313,8 +313,121 @@ function emptyObj(obj) {
 console.log(emptyObj({}));
 console.log(emptyObj({ a: 1 }));
 
-// Create a function that returns an object has following output.
-// ABC  -> { A: 1, B: 1, C: 1 }
+console.log("========4th Assignment=======");
+
+// Counting Letters.
+// Create a function that counts the number of occurrences of each letter in a string. Return an object with key pair values of letters and the number of occurrences for each letter.
+
+// Example:
+
+// countLetters("tree") ➞ {t: 1, r: 1, e: 2}
+
+function countLetters(str) {
+  let arr = str.split("");
+  let result = {};
+  function countOccurrences(string, letter) {
+    let counter = 0;
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] === letter) {
+        counter++;
+      }
+    }
+    return counter;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    let currentChar = arr[i];
+    result[currentChar] = countOccurrences(str, currentChar);
+  }
+  return result;
+}
+console.log(countLetters("tree"));
+
+console.log("========5th Assignment=======");
+
+// Free Shipping.
+// Create a function that determines whether an online order should get free shipping. An order gets free shipping if the total cost of items exceeds €50.
+
+// Examples:
+
+// freeShipping({ "Sponge": 3.50, "Soap": 5.99 }) ➞ false
+
+// freeShipping({ "Surround Sound Equipment": 499.99 }) ➞ true
+
+// freeShipping({ "Wool": 13.99, "Knitting Needles": 15.50, "Bag": 13.99 }) ➞ false
+
+const freeShipping = (obj) => {
+  let pricesArr = Object.values(obj); // [13.99,15.5,13.99]
+  let shoppingQueen = 50;
+  let totalOrder = pricesArr.reduce((acc, cur) => acc + cur, 0);
+  return totalOrder > shoppingQueen;
+};
+console.log(
+  freeShipping({ Wool: 13.99, "Knitting Needles": 15.5, Bag: 13.99 }) // false
+);
+console.log("----------------");
+
+// Programming Object.
+
+const programming = {
+  languages: ["JavaScript", "Python", "Ruby"],
+  isChallenging: true,
+  isRewarding: true,
+  difficulty: 8,
+  jokes:
+    "http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke",
+};
+
+// Write the command to add the language "Go" to the end of the languages array.
+programming.languages.push("Go");
+console.log(programming);
+// Change the difficulty to the value of 7.
+programming.difficulty = 7;
+console.log(programming);
+
+// Using the delete keyword, write the command to remove the jokes key from the programming object.
+delete programming.jokes;
+console.log(programming);
+
+// Write a command to add a new key called isFun and a value of true to the programming object.
+programming["isFun"] = true;
+// Using a loop, iterate through the languages array and console.log all of the languages.
+let lang = programming.languages;
+for (let i = 0; i < lang.length; i++) {
+  console.log(lang[i]);
+}
+// Using a loop, console.log all of the keys in the programming object.
+let myKeys = Object.keys(programming);
+for (let keys of myKeys) {
+  console.log(keys);
+}
+// for in
+// for of
+
+// Using a loop, console.log all of the values in the programming object.
+let myVal = Object.values(programming);
+for (let values of myVal) {
+  console.log(values);
+}
+// Create an object method where if the keys "isChallenging" and "isRewarding" have values of "true", then return "Learning the programming languages: "JavaScript, Python, Ruby, Go" is rewarding and challenging.
+// Bonus: In a comment, explain what is printed if we console.log an object method without calling it and why.
+programming.worthTry = function () {
+  if (this.isChallenging && this.isRewarding) {
+    return `Learning the programming languages ${this.languages}  is rewarding and challenging.`;
+  }
+};
+
+// Bonus:
+
+// Make sure that any other code cannot delete or change properties of the object.
+Object.seal(programming);
+console.log("----------------");
+
+// Bonus
+// Create a function that returns an object has following output, try this one in Advance array methods 💪🏻
+
+// Examples:
+
+// ABC -> { A: 1, B: 1, C: 1 } || QQQ -> { Q: 3}
 const countLettersAdc = (str) => {
   let arr = str.toLowerCase().split("");
   console.log(arr);
@@ -325,3 +438,53 @@ const countLettersAdc = (str) => {
   return result;
 };
 console.log(countLettersAdc("tree"));
+
+// Zodiac sign, write a function that tells the user his/her Zodiac sign. The user should enter only his birthday like dd-mm-yy
+// for farther information check https://en.wikipedia.org/wiki/Zodiac
+// Examples:
+// zodiac("14-02-2002")  -> Aquarius
+// zodiac("10-06-1984")  -> Gemini
+
+function zodiac(yearStr) {
+  let arr = yearStr.split("-");
+  console.log(arr);
+  const result = {
+    birthDay: arr[0],
+    birthMonth: arr[1],
+    birthYear: arr[2],
+    yourZodiac: function () {
+      data = [
+        { signName: "Not real day!", from: "0000" },
+        { signName: "Capricorn", from: "0101" },
+        { signName: "Aquarius", from: "0120" },
+        { signName: "Pisces", from: "0220" },
+        { signName: "Aries", from: "0321" },
+        { signName: "Taurus", from: "0420" },
+        { signName: "Gemini", from: "0521" },
+        { signName: "Cancer", from: "0621" },
+        { signName: "Leo", from: "0723" },
+        { signName: "Virgo", from: "0823" },
+        { signName: "Libra", from: "0923" },
+        { signName: "Scorpio", from: "1023" },
+        { signName: "Sagittarius", from: "1123" },
+        { signName: "Capricorn", from: "1222" },
+        { signName: "Not real day!", from: "1232" },
+      ];
+      // extra pro
+      // if (this.birthDay > 31 || this.birthMonth >12){
+      //   return "this is not a valid date"
+      // }
+      let monthDay = this.birthMonth + this.birthDay;
+      // 1123
+      let i = 0;
+      while (monthDay >= data[i].from && i < data.length) {
+        i++;
+      }
+      let yourZodiacName = data[i - 1].signName;
+      return `your Zodiac sign name ${yourZodiacName}`;
+    },
+  };
+  return result.yourZodiac();
+}
+console.log(zodiac("10-06-1989"));
+console.log(zodiac("14-02-2002"));
