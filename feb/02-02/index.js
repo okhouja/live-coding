@@ -364,7 +364,7 @@ const freeShipping = (obj) => {
 console.log(
   freeShipping({ Wool: 13.99, "Knitting Needles": 15.5, Bag: 13.99 }) // false
 );
-console.log("----------------");
+
 console.log("========6th Assignment=======");
 
 // Programming Object.
