@@ -365,6 +365,7 @@ console.log(
   freeShipping({ Wool: 13.99, "Knitting Needles": 15.5, Bag: 13.99 }) // false
 );
 console.log("----------------");
+console.log("========6th Assignment=======");
 
 // Programming Object.
 
@@ -408,6 +409,7 @@ let myVal = Object.values(programming);
 for (let values of myVal) {
   console.log(values);
 }
+
 // Create an object method where if the keys "isChallenging" and "isRewarding" have values of "true", then return "Learning the programming languages: "JavaScript, Python, Ruby, Go" is rewarding and challenging.
 // Bonus: In a comment, explain what is printed if we console.log an object method without calling it and why.
 programming.worthTry = function () {
@@ -420,7 +422,8 @@ programming.worthTry = function () {
 
 // Make sure that any other code cannot delete or change properties of the object.
 Object.seal(programming);
-console.log("----------------");
+
+console.log("========7th Assignment=======");
 
 // Bonus
 // Create a function that returns an object has following output, try this one in Advance array methods 💪🏻
@@ -438,6 +441,8 @@ const countLettersAdc = (str) => {
   return result;
 };
 console.log(countLettersAdc("tree"));
+
+console.log("========8th Assignment=======");
 
 // Zodiac sign, write a function that tells the user his/her Zodiac sign. The user should enter only his birthday like dd-mm-yy
 // for farther information check https://en.wikipedia.org/wiki/Zodiac
