@@ -61,7 +61,7 @@ let num1 = 33.5;
 console.log(Math.floor(num1)); //33
 console.log(Math.ceil(num1)); //34
 // -3 -2 -1 0 1 2 3
-let str3 = "Hi";
+let str3 = "  Hi  ";
 let userName = "Omar ";
 let lastName = "Khouja     ";
 console.log(str3.trim());
