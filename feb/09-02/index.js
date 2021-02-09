@@ -21,7 +21,9 @@ const isDivisible = (num) => num % 100 == 0;
 console.log(isDivisible(1000));
 
 console.log("========3rd Assignment====test===");
-
+/*
+#### 4. What's the weather?
+* Use a ternary operator to complete this task. Create a function named "_isRaining_". If true, print "_wet day - you need an umbrella_". If false, print "_dry day - leave your umbrella at home_".*/
 // Ternary Operator
 const isRaining = (bool) =>
   bool
@@ -29,6 +31,12 @@ const isRaining = (bool) =>
     : "dry day - leave your umbrella at home!";
 
 console.log(isRaining(true));
+
+console.log("========4th Assignment====test===");
+
+/*
+#### 1. Sequence
+* Create a function named "_geometricalSequence_" and use a loop to print the following sequence: _`1 2 4 8 16 32 64 128 256`_. Concatenate each value to a string and return a string.*/
 // Loop Sequence
 
 const geometricalSequence = () => {
@@ -46,6 +54,10 @@ const geometricalSequence = () => {
   return str.trim();
 };
 console.log(geometricalSequence());
+
+console.log("========5th Assignment====test===");
+/* #### 2. Multiples
+ * Create a function named "_multiplesOfThree_" and use a loop to print the first five multiples of three: _`3 6 9 12 15`_. Concatenate each value to a string and return a string.*/
 // Multiples of Three
 function multiplesOfThree() {
   let str = "";
@@ -59,6 +71,18 @@ function multiplesOfThree() {
 
 console.log(multiplesOfThree());
 
+console.log("========6th Assignment====test===");
+
+/*#### 1. You've got the power
+* Create a function named "_powerOf_" which takes an integer as an argument and returns the integer to the power of itself. You should use a Math Object to make the calculation.
+    > **Examples**:
+    - ```javascript 
+        powerOf(3) //27
+        ```
+
+    - ```javascript 
+        powerOf(4) //256
+        ``` */
 // powerOf
 function powerOf(integer) {
   return Math.pow(integer, integer);
@@ -67,6 +91,22 @@ function powerOf(integer) {
 
 console.log(powerOf(5));
 
+console.log("========7th Assignment====test===");
+/*### Problem Solving
+
+#### 1. How many?
+
+- Create a function named "_vowelCount_" that accepts a string as an argument. Check how many vowels the string contains, if any. Return the vowel count of the string.
+  > **Examples**:
+  - ```javascript
+    vowelCount("hello"); // 2
+    ```
+  - ```javascript
+    vowelCount("test"); // 1
+    ```
+  - ```javascript
+    vowelCount("fbw"); // 0
+    ``` */
 // Problem Solving: Number of vowels
 function vowelCount(string) {
   const vo = "aeiou";
