@@ -12,12 +12,18 @@ function nameOfCity(cityName) {
   }
 }
 console.log(nameOfCity("Valletta"));
+console.log(nameOfCity("Los angelos"));
+console.log(nameOfCity("New-york"));
+console.log(nameOfCity("Hamburg"));
 
 console.log("========2nd Assignment====test===");
 /* #### 2. isDivisible?
  * Create a function named "_isDivisible_". The function should take an integer as an argument. If the integer is divisible by 100, then return true. If not, return false. **Examples**: _1 ➞ false_, _1000 ➞ true_, _100 ➞ true_.*/
 // Is Divisible
 const isDivisible = (num) => num % 100 == 0;
+console.log(isDivisible(1));
+console.log(isDivisible(10));
+console.log(isDivisible(100));
 console.log(isDivisible(1000));
 
 console.log("========3rd Assignment====test===");
