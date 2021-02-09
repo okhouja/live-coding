@@ -55,7 +55,7 @@ console.log(resultStr);
 
 // Js methods from Math(.max , .min  , .floor , .ceil ,random   )
 
-console.log(Math.max(22, 3, 45, 555, -1)); // 6675
+console.log(Math.max(22, 3, 45, 6675, -1)); // 6675
 console.log(Math.min(1, 2, 455, 6675, 2, -1)); // -1
 let num1 = 33.5;
 console.log(Math.floor(num1)); //33
