@@ -188,7 +188,7 @@ const car = {
 };
 // Objects are references by default: Array and object literals
 
-const newCar = car; // ref
+const newCar = car; // reference
 
 newCar.name = "BMW";
 console.log(car);
