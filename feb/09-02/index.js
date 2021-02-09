@@ -134,6 +134,8 @@ function vowelCount(string) {
 console.log(vowelCount("test"));
 console.log(vowelCount("HElLooOoo"));
 
+console.log("========End of fake test Assignments=======");
+
 // Objects
 const obj1 = {};
 obj1["name"] = "Olga";
