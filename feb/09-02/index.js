@@ -37,6 +37,7 @@ const isRaining = (bool) =>
     : "dry day - leave your umbrella at home!";
 
 console.log(isRaining(true));
+console.log(isRaining(false));
 
 console.log("========4th Assignment====test===");
 
@@ -94,8 +95,10 @@ function powerOf(integer) {
   return Math.pow(integer, integer);
   // return integer ** integer
 }
-
+console.log(powerOf(3));
+console.log(powerOf(4));
 console.log(powerOf(5));
+console.log(powerOf(8865852));
 
 console.log("========7th Assignment====test===");
 /*### Problem Solving
