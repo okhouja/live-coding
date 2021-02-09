@@ -480,6 +480,7 @@ function zodiac(yearStr) {
       //   return "this is not a valid date"
       // }
       let monthDay = this.birthMonth + this.birthDay;
+      console.log(monthDay);
       // 1123
       let i = 0;
       while (monthDay >= data[i].from && i < data.length) {
