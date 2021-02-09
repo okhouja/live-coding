@@ -132,6 +132,7 @@ function vowelCount(string) {
 }
 
 console.log(vowelCount("test"));
+console.log(vowelCount("HElLooOoo"));
 
 // Objects
 const obj1 = {};
