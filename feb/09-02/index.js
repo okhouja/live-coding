@@ -1,3 +1,6 @@
+console.log("========1st Assignment====test===");
+/* #### 1. Los or New?
+ * Create a function named "_nameOfCity_". If a string begins with "_Los_" or "_New_", then print the full string. If not, print "_The city name does not begin with Los or New_". Be careful of case sensitivity.*/
 //Name of City
 
 function nameOfCity(cityName) {
@@ -9,9 +12,16 @@ function nameOfCity(cityName) {
   }
 }
 console.log(nameOfCity("Valletta"));
+
+console.log("========2nd Assignment====test===");
+/* #### 2. isDivisible?
+ * Create a function named "_isDivisible_". The function should take an integer as an argument. If the integer is divisible by 100, then return true. If not, return false. **Examples**: _1 ➞ false_, _1000 ➞ true_, _100 ➞ true_.*/
 // Is Divisible
 const isDivisible = (num) => num % 100 == 0;
 console.log(isDivisible(1000));
+
+console.log("========3rd Assignment====test===");
+
 // Ternary Operator
 const isRaining = (bool) =>
   bool
@@ -155,3 +165,36 @@ console.log(newCloneArr);
 const lastWay = names.slice(0);
 lastWay[0] = "cool";
 console.log(lastWay);
+
+/* Convert keys and values into an array. Create a function that converts an object into an array of keys and values.
+Examples:
+objectToArray({
+  A: 1,
+  B: 2,
+  C: 3
+}) 
+Expected output:
+[["A", 1], ["B", 2], ["C", 3]]
+objectToArray({
+  cats: 1,
+  dogs: 2, 
+  turtles: 4
+}) 
+Expected output:
+[["cats", 1], ["dogs", 2], ["turtles", 4]] 
+14:22 Uhr
+List Properties. Create a function that returns an array of properties of a javascript object.
+Example
+let student = {
+  name: "Mike", 
+  class: "4A" 
+  course: "English"
+}
+Expected output:
+["name", "class", "course"]
+Merge. Create a function that takes two objects as its parameters and merges them together into a new object.
+Example
+let first = {firstName: "John"}
+let last = {lastName: "Smith"}
+Expected output:
+{firstName: "John", lastName: "Smith"} */
