@@ -63,6 +63,7 @@ for (let i = 0; i < family.length; i++) {
     console.log(family[i][j]);
   }
 }
+console.log("======= forEach arr =========");
 // forEach  arr
 family.forEach((arr) => arr.forEach((element) => console.log(element)));
 // for of  arr
