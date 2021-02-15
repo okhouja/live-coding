@@ -78,11 +78,15 @@ console.log(keysArr);
 // Object.values
 console.log(Object.values(person));
 
+console.log("========Object.assign=======");
+
 // Object.assign
 const obj3 = { kids: 2, cars: 400 };
 const obj4 = { colors: ["Red", "Gray", "Black"], pet: "fish" };
 const totalObjects = Object.assign({ name: "Hadi" }, obj3, obj4);
 console.log(totalObjects);
+console.log("========Object.defineProperty()=======");
+
 // Object.defineProperty()
 
 const newPersonObject = {};
@@ -109,6 +113,8 @@ Object.defineProperties(newPersonObject, {
   },
 });
 console.log(newPersonObject.p1);
+console.log("========Small_Assignment=======");
+
 // Object yourPersonObj. Create an object named person2. Loop through the object and print both the property and value of the object.
 // const yourPersonObj = {
 //   person2: "Omar",
