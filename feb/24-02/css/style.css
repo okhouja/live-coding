@@ -1,0 +1,7 @@
+@font-face {
+  font-family: Harmattan;
+  src: url(../fonts/Harmattan-Regular.ttf);
+}
+h1 {
+  font-family: Harmattan;
+}
