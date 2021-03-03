@@ -1,0 +1,28 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Overlock&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Overlock, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100 vw;
+  height: 100vh;
+}
+/* form */
+form {
+  margin: 25% auto;
+  border: 2px red dashed;
+  width: 50%;
+  height: 50%;
+}
+input {
+  margin: 2vh auto;
+  display: block;
+  width: 30%;
+  border-radius: 2%;
+  border: none;
+  background-color: lightgray;
+}
