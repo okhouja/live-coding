@@ -2,3 +2,10 @@
 .mygridcolor {
   background-color: bisque;
 }
+
+.mypadding {
+  padding-top: 2em;
+}
+.mycolumn {
+  background-color: burlywood;
+}
