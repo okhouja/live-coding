@@ -19,20 +19,20 @@
 }
 .box2 {
   @include box2;
-  @include fade-in(3s);
+  @include fade-out(3s);
   @include center;
   background-color: salmon;
 }
-@keyframes fade-in {
+@keyframes fade-out {
   0% {
-    @include hide;
+    @include reveal;
     width: 5rem;
-    transform: scale(0) rotate(0deg);
+    transform: scale(1) rotate(90deg);
   }
 
   100% {
-    @include reveal;
+    @include hide;
     width: 3rem;
-    transform: scale(1) rotate(90deg);
+    transform: scale(0) rotate(0deg);
   }
 }

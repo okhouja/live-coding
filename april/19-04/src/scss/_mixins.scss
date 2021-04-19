@@ -41,3 +41,10 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+@mixin fade-out($time) {
+  animation-name: fade-out;
+  animation-duration: #{$time};
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
