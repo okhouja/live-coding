@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: orange;
+}
+
+.box {
+  animation-name: fade-in;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  width: 4rem;
+  height: 4rem;
+  background-color: purple;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    width: 5rem;
+    transform: scale(0) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    width: 3rem;
+    transform: scale(1) rotate(90deg);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
