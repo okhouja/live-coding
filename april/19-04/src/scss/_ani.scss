@@ -17,3 +17,8 @@
     transform: scale(1) rotate(90deg);
   }
 }
+.box2 {
+  @include box2;
+  @include center;
+  background-color: salmon;
+}
