@@ -36,3 +36,7 @@
     transform: scale(0) rotate(0deg);
   }
 }
+
+ul {
+  @include normalize;
+}

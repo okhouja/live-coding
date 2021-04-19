@@ -59,5 +59,51 @@
     transform: scale(0) rotate(0deg);
   }
 }
+ul li {
+  list-style: none;
+}
+ul a {
+  text-decoration: none;
+}
+
+.triangle::before, .triangle::after {
+  display: block;
+  content: "";
+  margin: 1rem;
+}
+.triangle::before {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid blue;
+}
+.triangle::after {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid orange;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-s {
+  font-size: 14px;
+}
+
+.text-m {
+  font-size: 16px;
+}
+
+.text-xl {
+  font-size: 40px;
+}
+
+.text-xxl {
+  font-size: 60px;
+}
 
 /*# sourceMappingURL=main.css.map */
