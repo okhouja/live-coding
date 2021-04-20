@@ -27,3 +27,13 @@
 .text-xxl {
   @include font-size(xxl);
 }
+
+.light {
+  @include color-shade(light);
+}
+.dark {
+  @include color-shade(dark);
+}
+.super {
+  @include color-shade(superdark);
+}

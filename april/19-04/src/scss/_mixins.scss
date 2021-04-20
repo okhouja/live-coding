@@ -98,9 +98,9 @@ $font-sizing: (
   xxl: 60px,
 );
 $orange-colors: (
-  light: rgb(214, 107, 25),
+  light: rgb(211, 156, 114),
   dark: rgb(214, 107, 14),
-  super: rgb(214, 107, 20),
+  superdark: rgb(161, 109, 91),
 );
 
 @mixin font-size($size) {
@@ -116,5 +116,13 @@ $orange-colors: (
     @return map-get($font-sizing, $size);
   } @else {
     @error "#{$size} this is not defined, Use #{font-sizing}";
+  }
+}
+
+@mixin color-shade($colors) {
+  @if map-has-key($orange-colors, $colors) {
+    background-color: map-get($orange-colors, $colors);
+  } @else {
+    @error "#{$colors} this is not defined, Use #{orange-colors}";
   }
 }

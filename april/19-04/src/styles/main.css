@@ -106,4 +106,16 @@ ul a {
   font-size: 60px;
 }
 
+.light {
+  background-color: #d39c72;
+}
+
+.dark {
+  background-color: #d66b0e;
+}
+
+.super {
+  background-color: #a16d5b;
+}
+
 /*# sourceMappingURL=main.css.map */
