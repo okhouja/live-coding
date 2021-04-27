@@ -1,6 +1,6 @@
 // Change the font of the body element.
 const body = document.querySelector("body");
-body.style.fontFamily = "Arial";
+body.style.fontFamily = "Tahoma";
 // other way
 // document.querySelector("body").style.fontFamily = "Arial";
 
