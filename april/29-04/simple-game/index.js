@@ -24,7 +24,7 @@ function move(e) {
   if (e.code == "KeyW") goUp();
   if (e.code == "KeyD") goRight();
   if (e.code == "KeyA") goLeft();
-  if (e.code == "KeyY") goDown();
+  if (e.code == "KeyS") goDown();
   console.log(hStandPoint);
   console.log(vStandPoint);
   if (
