@@ -39,3 +39,9 @@ console.log(menuList.firstElementChild);
 console.log(menuList.lastElementChild);
 
 // all comments in your html page should be printed in console
+const allcomment = document.querySelectorAll("body");
+console.log(allcomment);
+allcomment.forEach((comment) => {
+  console.log(comment.COMMENT_NODE);
+  if (comment.matches(".COMMENT_NODE")) console.log(`${comment}`);
+});
