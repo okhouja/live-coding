@@ -44,7 +44,7 @@ function change() {
 
 function multiply() {
   let userNum = document.querySelector("#num").value;
-  // console.log(userNum);
+  console.log(userNum);
   let resultText = "";
   for (let i = 1; i <= 10; i++) {
     resultText += `${i} * ${userNum} ☘️ ${i * userNum} <br>`;
