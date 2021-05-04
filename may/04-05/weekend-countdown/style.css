@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+}
+main {
+  font-family: "Itim", cursive;
+  width: 50vw;
+  height: 50vh;
+  line-height: 3rem;
+}
+input {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: larger;
+}
+button {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: smaller;
+}
+footer {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  font-size: smaller;
+}
