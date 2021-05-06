@@ -55,3 +55,46 @@ function fetchApi() {
     })
     .catch((err) => console.log(err));
 }
+
+function fetchApiComments() {
+  fetch("https://jsonplaceholder.typicode.com/comments")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let userCard = "<h2>Comments API response </h2>";
+      data.forEach((img) => {
+        let { postId, id, name, email, body } = img;
+        userCard += `
+        <div id=${postId}>
+            <div id=${id}>
+            <h3>${name}</h3>
+            <h4>${email}</h4>
+            <div>${body}</div>
+        </div>
+            `;
+      });
+      document.querySelector(".result").innerHTML = userCard;
+    })
+    .catch((err) => console.log(err));
+}
+
+function fetchApiTodo() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let userCard = "<h2>Images API response </h2>";
+      data.forEach((img) => {
+        let { userId, id, title, completed } = img;
+        userCard += `
+        <div id=${userId}>
+            <div id=${id}>
+            <h3>${title}</h3>
+            <div>${completed}</div>
+        </div>
+            `;
+      });
+      document.querySelector(".result").innerHTML = userCard;
+    })
+    .catch((err) => console.log(err));
+}
