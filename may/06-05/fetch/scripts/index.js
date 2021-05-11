@@ -62,10 +62,10 @@ function fetchApiComments() {
     .then((data) => {
       console.log(data);
       let userCard = "<h2>Comments API response </h2>";
-      data.forEach((img) => {
-        let { postId, id, name, email, body } = img;
+      data.forEach((text) => {
+        let { postId, id, name, email, body } = text;
         userCard += `
-        <div id=${postId}>
+            <div id=${postId}>
             <div id=${id}>
             <h3>${name}</h3>
             <h4>${email}</h4>
@@ -87,7 +87,7 @@ function fetchApiTodo() {
       data.forEach((img) => {
         let { userId, id, title, completed } = img;
         userCard += `
-        <div id=${userId}>
+            <div id=${userId}>
             <div id=${id}>
             <h3>${title}</h3>
             <div>${completed}</div>
