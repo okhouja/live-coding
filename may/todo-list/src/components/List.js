@@ -21,7 +21,7 @@ const List = (props) => {
     }
   }
   return (
-    <form onSubmit={submitHandle}>
+    <form className="inputstyle" onSubmit={submitHandle}>
       <input type="text" value={userInput} onChange={changeHandle} />
       <input type="submit" value="Add" />
     </form>
