@@ -16,10 +16,12 @@ input[type="text"] {
 }
 input[type="submit"] {
   border: none;
-  width: 2.4rem;
-  height: 1.5rem;
+  background-color: rosybrown;
+  width: 2.9rem;
+  height: 1.8rem;
   margin: 1% auto;
   display: flex;
+  font-size: 1rem;
   justify-content: center;
   align-items: center;
 }
