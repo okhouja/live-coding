@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sass/main.scss";
-import "./components/Sidenav";
+import Sidenav from "./components/Sidenav";
 
 function App() {
+  const [theme, setTheme] = useState([]);
+
   return (
     <React.Fragment>
-      <div>
-        <Sidenav />
-      </div>
+      <Sidenav />
     </React.Fragment>
   );
 }
