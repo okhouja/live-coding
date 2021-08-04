@@ -1,6 +1,6 @@
 const axios = require("axios");
 const url = require("url");
-
+// export class OpenWeatherClient
 class OpenWeatherClient {
   constructor(apiKey) {
     this.apiKey = apiKey;
@@ -17,10 +17,10 @@ class OpenWeatherClient {
   }
   async getWeather(city, country) {
     let endpoint = `weather?q=${city}`;
-    if (contry) {
+    if (country) {
       endpoint += `,${country}`;
     }
-    return await this.get(endpint);
+    return await this.get(endpoint);
   }
 }
 
