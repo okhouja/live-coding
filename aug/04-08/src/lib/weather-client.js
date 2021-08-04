@@ -4,7 +4,7 @@ const url = require("url");
 class OpenWeatherClient {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseUrl = "api.openweathermap.org/data/2.5/";
+    this.baseUrl = "http://api.openweathermap.org/data/2.5/";
   }
   get(endpoint) {
     const URL =
@@ -13,7 +13,7 @@ class OpenWeatherClient {
     return axios
       .get(URL)
       .then((res) => res.data)
-      .cath((err) => Promise.reject(err.response.data.message));
+      .catch((err) => Promise.reject(err.response.data.message));
   }
   async getWeather(city, country) {
     let endpoint = `weather?q=${city}`;
@@ -24,8 +24,8 @@ class OpenWeatherClient {
   }
 }
 
-// 450f -30/2 = c
+// (450f -30) / 2 = c simple method to convert from Fahrenheit to Celsius (Not super accurate 😅)
 
-//api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${this.apiKey}
+// http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${this.apiKey}
 
 module.exports = OpenWeatherClient;
