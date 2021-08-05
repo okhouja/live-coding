@@ -1,5 +1,5 @@
 const OpenWeatherClient = require("./weather-client");
-const myKey = require("../../config");
+const myKey = require("../../configs");
 
 const API_KEY = myKey.apiKey;
 
