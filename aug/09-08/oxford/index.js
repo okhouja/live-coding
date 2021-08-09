@@ -7,7 +7,7 @@ const http = require("http");
 
 const PORT = process.env.PORT || 5000;
 const axios = require("axios");
-const config = require("../config");
+const config = require("./config");
 
 async function dictionary() {
   const myId = config.apiID;
@@ -18,7 +18,7 @@ async function dictionary() {
     app_key: myKey,
   };
   try {
-    const { data } = await axios.post(
+    const { data } = await axios.get(
       "https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/ace?strictMatch=false",
       { headers }
     );
