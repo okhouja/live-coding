@@ -1,6 +1,7 @@
 // #!/usr/bin/env node
 // const dictionary = require("./lib/dictionary-client");
-// const args = process.argv.slice(2);
+const args = process.argv.slice(2);
+const wordID = args;
 
 require("dotenv").config();
 const http = require("http");
@@ -14,17 +15,20 @@ async function dictionary() {
   const myKey = config.apiKey;
 
   const headers = {
+    Accept: "application/json",
     app_id: myId,
     app_key: myKey,
   };
   try {
     const { data } = await axios.get(
-      "https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/ace?strictMatch=false",
+      `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordID}?fields=definitions&strictMatch=false`,
       { headers }
     );
 
-    console.log("Result data:", data);
+    console.log(data.results.lexicalEntries);
   } catch (error) {
     console.log("Error:", error.response.data);
   }
 }
+
+dictionary(wordID);
