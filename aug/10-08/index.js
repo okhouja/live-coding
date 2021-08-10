@@ -17,7 +17,9 @@ app.get("/", (req, res) => {
   res.send("Hey, I am home Page");
 });
 //http://localhost:5000/about
-app.get("/about");
+app.get("/about", (req, res) => {
+  res.send("About Page");
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
