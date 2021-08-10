@@ -7,3 +7,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 // HTTP Methods
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+const express = require("express");
+const app = express();
+const PORT = 5000;
