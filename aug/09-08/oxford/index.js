@@ -25,8 +25,8 @@ const dictionary = async () => {
 
 const printDictionary = async () => {
   const definitions = await dictionary();
-  if (definitions.data.results) {
-    console.log(`Got${data.results}`);
-  }
+  // if (definitions.data.results) {
+  //   console.log(`Got${data.results}`);
+  // }
 };
 printDictionary(wordID);

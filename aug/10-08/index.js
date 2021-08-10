@@ -11,3 +11,14 @@
 const express = require("express");
 const app = express();
 const PORT = 5000;
+
+//http://localhost:5000/
+app.get("/", (req, res) => {
+  res.send("Hey, I am home Page");
+});
+//http://localhost:5000/about
+app.get("/about");
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
