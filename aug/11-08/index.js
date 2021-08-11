@@ -4,10 +4,17 @@ require("dotenv").config;
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(logger);
+
+// Middleware
+function logger(req, res, next) {
+  console.log("Log 1");
+  next();
+}
 
 // http://localhost:5000/
 app.get("/", (req, res) => {
-  console.log(req);
+  //   console.log(req);
   res.send("<h2> Welcome to our App</h2>");
 });
 
@@ -18,12 +25,24 @@ app.get("/about", (req, res) => {
 });
 
 // http://localhost:5000/user
-app.get("/user", (req, res) => {
+app.get("/user", userLogged, (req, res) => {
   // url/user?name=Omar
-  console.log(req.query);
-  const username = req.query.name;
+  //   console.log(req.query);
+  //   const username = req.query.name;
+  const username = req.userName;
   res.send(`<h2> Hey ${username}</h2>`);
 });
+
+function userLogged(req, res, next) {
+  if (req.query.username == "Omar") {
+    console.log("Log 2");
+    req.userName = "Omar";
+    next();
+  } else {
+    res.send("Login or Register");
+  }
+}
+
 // http://localhost:5000/login
 
 app.post("/login", (req, res) => {
@@ -43,6 +62,10 @@ app.post("/login", (req, res) => {
     res.send(401).send("invalid username or pass");
   }
   res.send("cool");
+});
+
+app.get("/api", function (req, res) {
+  res.status(200).json({ id: 1, cityname: "Hamburg", countrty: "Germany" });
 });
 
 const PORT = process.env.PORT || 5000;
