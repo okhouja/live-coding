@@ -1,8 +1,18 @@
+// npm init -y
+// echo "PORT=5000" > .env
+// echo "node_modules/" > .gitignore
+// npm i express dontenv
+// npm i nodemon --save-dev
+// json script
+// "start": "nodemon index.js"
+
 require("dotenv").config;
 // express
 
 const express = require("express");
 const app = express();
+
+// to help express read json :)
 app.use(express.json());
 app.use(logger);
 
@@ -26,7 +36,7 @@ app.get("/about", (req, res) => {
 
 // http://localhost:5000/user
 app.get("/user", userLogged, (req, res) => {
-  // url/user?name=Omar
+  //   url/user?name=Omar
   //   console.log(req.query);
   //   const username = req.query.name;
   const username = req.userName;
@@ -43,7 +53,7 @@ function userLogged(req, res, next) {
   }
 }
 
-// http://localhost:5000/login
+// POST Method  http://localhost:5000/login
 
 app.post("/login", (req, res) => {
   console.log(req.body);
@@ -57,15 +67,15 @@ app.post("/login", (req, res) => {
   const userName = req.body.userName;
   const pass = req.body.pass;
   if (userName === "Omar" && pass === "000123fe345") {
-    res.status(200).send(`Welcome Back <h1>${userName}</h1>`);
+    res.status(200).send(`Welcome Back <h2>${userName}</h2>`);
   } else {
-    res.send(401).send("invalid username or pass");
+    res.status(401).send("invalid username or pass");
   }
-  res.send("cool");
 });
 
-app.get("/api", function (req, res) {
-  res.status(200).json({ id: 1, cityname: "Hamburg", countrty: "Germany" });
+// GET method  http://localhost:5000/api
+app.get("/api", (req, res) => {
+  res.status(200).json({ id: 1, cityname: "Hamburg", country: "Germany" });
 });
 
 const PORT = process.env.PORT || 5000;
