@@ -16,6 +16,14 @@ app.get("/about", (req, res) => {
   res.send("<h2> We are the coolest people</h2>");
 });
 
+// http://localhost:5000/user
+app.get("/user", (req, res) => {
+  // url/user?name=Omar
+  console.log(req.query);
+  const username = req.query.name;
+  res.send(`<h2> Hey ${username}</h2>`);
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
