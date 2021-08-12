@@ -17,6 +17,12 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+//lowdb
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+const jsonFile = new FileSync("db.json");
+const db = low(jsonFile);
+
 // json setup old school
 // const bodyParser = require("body-parser");
 // app.use(bodyParser.urlencoded({ extended: true }));
