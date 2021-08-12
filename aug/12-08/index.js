@@ -66,6 +66,19 @@ app.get("/find", async (req, res) => {
 });
 
 // update
+app.get("/update", async (req, res) => {
+  // url /update
+  await db.update("num", (n) => n + 1).write();
+  const num = db.get("num").value();
+  res.send(`num was updated, now is = ${num}`);
+});
+
+app.get("/user", async (req, res) => {
+  // url /user?name=Omar
+  const name = req.query.name;
+  await db.set("user.name", name).write;
+  res.send(`Hey ${name}`);
+});
 
 // delete
 
