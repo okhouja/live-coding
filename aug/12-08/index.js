@@ -38,17 +38,27 @@ app.get("/", (req, res) => {
 
 // db init
 app.get("/new", async (req, res) => {
-  await db.defaults({ article: [], user: {}, num: 1 }).write();
+  await db.defaults({ articles: [], user: {}, num: 1 }).write();
   res.send("New db being init");
 });
 
-// add
-app.get("/add", async (req, res) => {
+// add a new article to the array of articels
+app.get("/add-article", async (req, res) => {
   // url /add?id=1&title=cool
   const id = req.query.id;
   const title = req.query.title;
   db.get("articles").push({ id: id, title: title }).write();
   res.send(`New data being entered id:${id} title:${title}`);
+});
+
+// add a new properties to db
+app.get("/add-prop", async (req, res) => {
+  // url /add-prop?id=1&key=colors&value=blue
+  const id = req.query.id;
+  const key = req.query.key;
+  const value = req.query.value;
+  db.set(key, { id: id, [key]: value }).write();
+  res.send(`New data being entered id:${id},${key}:${value}`);
 });
 
 // find
@@ -81,6 +91,18 @@ app.get("/user", async (req, res) => {
 });
 
 // delete
+app.delete("/delete", async (req, res) => {
+  // to remove an article
+  //url /delete?title=water
+  //   const title = req.query.title;
+  const id = req.query.id;
+  //   await db.get("articles").remove({ title: title }).write();
+  //   res.status(200).send(`Your ${title} has been removed`);
+  // to remove p
+  // url /delete
+  db.get("article").remove({ id: id }).write();
+  res.status(200).send("user.name has been removed");
+});
 
 app.listen(PORT, () => {
   console.log(`server listen on http://localhost:${PORT}`);

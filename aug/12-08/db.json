@@ -1,5 +1,54 @@
 {
-  "article": [],
+  "articles": [
+    {
+      "id": "1701",
+      "title": "water3"
+    },
+    {
+      "id": "1401",
+      "title": "wate5"
+    },
+    {
+      "id": "1071",
+      "title": "water"
+    },
+    {
+      "id": "1031",
+      "title": "water"
+    },
+    {
+      "id": "1041",
+      "title": "water"
+    },
+    {
+      "id": "1",
+      "title": "hi"
+    },
+    {
+      "id": "1",
+      "title": "hi"
+    },
+    {
+      "id": "1",
+      "title": "hi"
+    }
+  ],
   "user": {},
-  "num": 17
+  "num": 19,
+  "fav": {
+    "id": "1",
+    "favorite": "cool"
+  },
+  "colors": {
+    "id": "1",
+    "colors": "blue"
+  },
+  "date": {
+    "id": "1",
+    "date": "12.8.2021"
+  },
+  "food": {
+    "id": "3",
+    "food": "kubeh"
+  }
 }
