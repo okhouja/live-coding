@@ -37,10 +37,33 @@ app.get("/", (req, res) => {
 });
 
 // db init
+app.get("/new", async (req, res) => {
+  await db.defaults({ article: [], user: {}, num: 1 }).write();
+  res.send("New db being init");
+});
 
 // add
+app.get("/add", async (req, res) => {
+  // url /add?id=1&title=cool
+  const id = req.query.id;
+  const title = req.query.title;
+  db.get("articles").push({ id: id, title: title }).write();
+  res.send(`New data being entered id:${id} title:${title}`);
+});
 
 // find
+
+app.get("/find", async (req, res) => {
+  // find?id=1
+  const idToFind = req.query.id;
+  res.send(await db.get("articles").find({ id: idToFind }).value());
+  let text = "";
+  if (result) {
+    text = result;
+  } else {
+    text = "sorry, not found";
+  }
+});
 
 // update
 
