@@ -1,7 +1,7 @@
 // npm init -y
 // echo "PORT=5000" > .env
 // echo "node_modules/" > .gitignore
-// npm i express dontenv
+// npm i express dotenv
 // npm i nodemon --save-dev
 // json script
 // "start": "nodemon index.js"
