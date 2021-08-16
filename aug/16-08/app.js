@@ -1,8 +1,16 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+//const createError = require("http-errors");
+//const userRoute = require("./router/users");
 
-app.use(morgan());
+app.use(morgan("dev"));
+
+// Middleware
+// app.use((req, res, next) => {
+//   if (!req.query.userName) return next(createError(401, "Login to this page"));
+//   next();
+// });
 app
   .get("/", (req, res) => {
     console.log("GET");
