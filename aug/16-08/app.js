@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-//const createError = require("http-errors");
-//const userRoute = require("./router/users");
+const createError = require("http-errors");
+const userRouter = require("./router/users");
 
 app.use(morgan("dev"));
 
@@ -11,6 +11,11 @@ app.use(morgan("dev"));
 //   if (!req.query.userName) return next(createError(401, "Login to this page"));
 //   next();
 // });
+// localhost:5000/user (GET PUT  POST,...)
+app.use("/users", userRouter);
+
+//root
+// url localhost:5000/
 app
   .get("/", (req, res) => {
     console.log("GET");
