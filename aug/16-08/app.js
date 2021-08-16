@@ -3,6 +3,7 @@ const app = express();
 const morgan = require("morgan");
 const createError = require("http-errors");
 const userRouter = require("./router/users");
+const bookRouter = require("./router/books");
 
 app.use(morgan("dev"));
 
@@ -13,6 +14,7 @@ app.use(morgan("dev"));
 // });
 // localhost:5000/user (GET PUT  POST,...)
 app.use("/users", userRouter);
+app.use("/books", bookRouter);
 
 //root
 // url localhost:5000/
