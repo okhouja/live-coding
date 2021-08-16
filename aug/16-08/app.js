@@ -51,4 +51,15 @@ app
     res.status(200).json({ text: "This is a DELETE request" });
   });
 
+// bill error message
+app.post("/bill", (req, res, next) => {
+  next(
+    createError(402, `You don't have enough Money`, {
+      detail: {
+        yourBalance: 400,
+        itemCost: 6000,
+      },
+    })
+  );
+});
 module.exports = app;
