@@ -15,6 +15,8 @@ To start new express project
  json script
  "start": "nodemon server.js"
  */
+
+// use employees
 // MongoDB with Express
 
 // Your DB is able to CRUD aka Creat Retrieve Update Delete
