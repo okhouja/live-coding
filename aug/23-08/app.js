@@ -16,6 +16,6 @@ mongoose
     console.log(`There was a problem ${error.message}`);
   });
 
-const employees = require("./router/employees");
-app.use("/employees", employees);
+// const employees = require("./router/employees");
+// app.use("/employees", employees);
 module.exports = app;
