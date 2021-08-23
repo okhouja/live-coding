@@ -3,7 +3,7 @@ To start new express project
  npm init -y
  echo "PORT=5000" > .env
  echo "node_modules/" > .gitignore
- npm i express
+ npm i express 
  npm i dotenv
  npm i morgan
  npm i mongoose
@@ -22,11 +22,12 @@ To start new express project
 // Your DB is able to CRUD aka Creat Retrieve Update Delete
 
 // Your server is able to REST API (REpresentational State Transfer) aka server can do (create, delete, update, read)requests
+// sometimes you see RESTFull API well thats exactly the same but also abel to handle ????
 require("dotenv").config();
 const http = require("http");
 const app = require("./app");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(app);
 server.listen(PORT, () => {
