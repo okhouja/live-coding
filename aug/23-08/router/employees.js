@@ -93,9 +93,9 @@ router.patch("/:name", getEmployee, async (req, res) => {
   }
   if (req.body.add) {
     // Berlin
-    res.body.add = req.body.add;
+    res.employee.add = req.body.add;
   }
-  console.log(res.body.add);
+  console.log(res.employee.add);
   try {
     await res.employee.save();
     res
