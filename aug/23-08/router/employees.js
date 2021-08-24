@@ -64,4 +64,10 @@ router.get("/:name", getEmployee, (req, res) => {
   res.status(200).json(res.employee);
 });
 
+// GET http://localhost:5000/employees get all employees
+// GET http://localhost:5000/employees/:name get one employee
+// POST http://localhost:5000/employees add new employee
+// DELETE http://localhost:5000/employees/:name delete one employee by name (later will be by id)
+// UPDATE http://localhost:5000/employees/:name one employee updated by name (later will be by id)
+
 module.exports = router;
