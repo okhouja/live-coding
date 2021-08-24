@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
   });
   try {
     const newEmployee = await employee.save();
-    console.log("newEmployee");
+    console.log(newEmployee);
     res.status(201).json({ newEmployee });
   } catch (err) {
     res.status(400).json({ message: err.message });
