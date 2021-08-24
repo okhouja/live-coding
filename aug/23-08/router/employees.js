@@ -19,18 +19,19 @@ router.get("/", async (req, res) => {
 // Add employee
 // url  http:localhost:5000/employees
 /*{
-name :"Omar",
-age: 39,
-add: "Hamburg"
+"name" :"Omar",
+"age": 39,
+"add": "Hamburg"
 }*/
 router.post("/", async (req, res) => {
   const employee = new EmployeesData({
-    name: req.body.name,
+    name: req.body.name.toLowerCase(),
     age: req.body.age,
     add: req.body.add,
   });
   try {
     const newEmployee = await employee.save();
+    console.log("newEmployee");
     res.status(201).json({ newEmployee });
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -43,7 +44,10 @@ async function getEmployee(req, res, next) {
   try {
     //  employee = await EmployeesData.findById(req.params.id)
     //  employee = await EmployeesData.find({ name: req.params.name });
-    employee = await EmployeesData.findOne({ name: req.params.name });
+
+    employee = await EmployeesData.findOne({
+      name: req.params.name.toLowerCase(),
+    });
     if (employee == null)
       return res.status(404).json({ message: "employee Not Found" });
   } catch (err) {
