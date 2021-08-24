@@ -3,11 +3,17 @@ const express = require("express");
 const router = express.Router();
 // Model
 const EmployeesData = require("../model/employeesModel");
-
-// url  http:localhost:5000/employees
+// Our Gaol
+// Get http://localhost:5000/employees get all employees
+// Get http://localhost:5000/employees/:name get one employee
+// POST http://localhost:5000/employees add new employee
+// DELETE http://localhost:5000/employees/:name delete one employee by name (later will be by id)
+// UPDATE aka  PUT http://localhost:5000/employees/:name update (All the info) one employee by name (later will be by id)
+// PATCH http://localhost:5000/employees/:name update (some info) one employee by name (later will be by id)
 
 // Get all Employees
 router.get("/", async (req, res) => {
+  // url  http:localhost:5000/employees
   try {
     const employees = await EmployeesData.find();
     res.status(200).json(employees);
@@ -17,13 +23,13 @@ router.get("/", async (req, res) => {
 });
 
 // Add employee
-// url  http:localhost:5000/employees
-/*{
-"name" :"Omar",
-"age": 39,
-"add": "Hamburg"
-}*/
 router.post("/", async (req, res) => {
+  // url  http:localhost:5000/employees
+  /* {
+      "name" :"Omar",
+      "age": 39,
+      "add": "Hamburg"
+} */
   const employee = new EmployeesData({
     name: req.body.name.toLowerCase(),
     age: req.body.age,
@@ -38,7 +44,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Middleware
+// Middleware Get one employee
 async function getEmployee(req, res, next) {
   let employee;
   try {
@@ -59,15 +65,45 @@ async function getEmployee(req, res, next) {
 }
 
 // Get one employee
-// url http://localhost:5000/employees/Omar
 router.get("/:name", getEmployee, (req, res) => {
+  // url http://localhost:5000/employees/Omar
   res.status(200).json(res.employee);
 });
 
-// GET http://localhost:5000/employees get all employees
-// GET http://localhost:5000/employees/:name get one employee
-// POST http://localhost:5000/employees add new employee
-// DELETE http://localhost:5000/employees/:name delete one employee by name (later will be by id)
-// UPDATE http://localhost:5000/employees/:name one employee updated by name (later will be by id)
+// Delete one employee
+router.delete("/:name", getEmployee, async (req, res) => {
+  // url http:localhost:5000/employees/jack
+  try {
+    await res.employee.remove();
+    res.status(200).json({ message: "Employee Deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Patch one employee
+router.patch("/:name", getEmployee, async (req, res) => {
+  console.log(req.body);
+  console.log(res.employee);
+  if (req.body.name) {
+    res.employee.name = req.body.name;
+  }
+  if (req.body.age) {
+    res.employee.age = req.body.age;
+  }
+  if (req.body.add) {
+    // Berlin
+    res.body.add = req.body.add;
+  }
+  console.log(res.body.add);
+  try {
+    await res.employee.save();
+    res
+      .status(200)
+      .json({ message: "Employee updated successfully", data: res.employee });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
 
 module.exports = router;
