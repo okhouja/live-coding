@@ -85,6 +85,7 @@ router.delete("/:name", getEmployee, async (req, res) => {
 router.patch("/:name", getEmployee, async (req, res) => {
   console.log(req.body);
   console.log(res.employee);
+
   if (req.body.name) {
     res.employee.name = req.body.name;
   }
@@ -92,7 +93,7 @@ router.patch("/:name", getEmployee, async (req, res) => {
     res.employee.age = req.body.age;
   }
   if (req.body.add) {
-    // Berlin
+    //          Berlin
     res.employee.add = req.body.add;
   }
   console.log(res.employee.add);
@@ -106,4 +107,6 @@ router.patch("/:name", getEmployee, async (req, res) => {
   }
 });
 
+// router.route("/").get(getAllEmp).post(addNewEmp);
+// router.route("/:name").get().post()
 module.exports = router;
