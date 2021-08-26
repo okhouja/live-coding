@@ -29,7 +29,7 @@ const getAdd = async (req, res, next) => {
   let employee;
   try {
     employee = await EmployeesData.find({ add: req.params.add });
-    if (employee == null) {
+    if (employee.length == 0) {
       // NOt found
       return res.status(404).json({ message: "Sorry, NOT FOUND." });
     }
@@ -90,9 +90,10 @@ const updateOneEmployee = async (req, res) => {
   try {
     // save
     await res.employee.save();
+    // 200 for Successful OK
     res.status(200).json({ message: "Employee updated", data: res.employee });
   } catch (err) {
-    // 400 for bad request
+    // 400 for Bad request
     res.status(400).json({ message: err.message });
   }
 };
@@ -129,7 +130,7 @@ const deleteOneEmployee = async (req, res) => {
     });
   }
 };
-// PUT
+// PUT AKA Update one Employee upon criteria
 const updateAllEmployeeData = async (req, res) => {
   try {
     await EmployeesData.updateOne(
@@ -152,6 +153,27 @@ const updateAllEmployeeData = async (req, res) => {
   }
 };
 
+// Update All Employee  upon criteria
+
+const updateManyEmployees = async (req, res) => {
+  try {
+    // update many
+    await EmployeesData.updateMany(
+      { add: req.params.add },
+      {
+        $set: {
+          add: req.body.add,
+        },
+      }
+    );
+    // 200 for Successful OK
+    res.status(200).json({ message: "Add got update" });
+  } catch (err) {
+    // 400 for Bad request
+    res.status(400).json({ message: err.message });
+  }
+};
+
 module.exports = {
   getEmployee,
   getAdd,
@@ -161,4 +183,5 @@ module.exports = {
   addNewEmployee,
   deleteOneEmployee,
   updateAllEmployeeData,
+  updateManyEmployees,
 };
