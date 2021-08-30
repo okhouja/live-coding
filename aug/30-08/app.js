@@ -20,8 +20,11 @@ mongoose
 // console.log(path.resolve(__dirname, "views"));
 // console.log(faker.animal.cat());
 
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views"));
+
 app.get("/", (req, res) => {
-  // soon render
+  res.render("home", { message: "Test" });
 });
 app.post("/", (req, res) => {});
 module.exports = app;
