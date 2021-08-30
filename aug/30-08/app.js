@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const faker = require("faker");
 // Get you the Path
 const path = require("path");
-//const fakeModel = require("./model/user");
+const fakeModel = require("./model/user");
 mongoose
   .connect(process.env.DB_URL, {
     useNewUrlParser: true,
@@ -36,6 +36,21 @@ app.get("/", (req, res) => {
     }
   });
 });
-app.post("/", (req, res) => {});
+app.post("/", (req, res) => {
+  for (let i = 0; i < 10; i++) {
+    const fakeData = new fakeModel({
+      firstName: faker.name.firstName(),
+      LastName: faker.name.lastName(),
+      city: faker.adress.city(),
+      imageUrl: faker.image.imageUrl(),
+    });
+    try {
+      fakeData.save();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  res.redirect("/");
+});
 
 module.exports = app;
