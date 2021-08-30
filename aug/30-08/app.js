@@ -17,5 +17,11 @@ mongoose
   .catch((err) => {
     console.log(`There was error ${err.message}`);
   });
+// console.log(path.resolve(__dirname, "views"));
+// console.log(faker.animal.cat());
 
+app.get("/", (req, res) => {
+  // soon render
+});
+app.post("/", (req, res) => {});
 module.exports = app;
