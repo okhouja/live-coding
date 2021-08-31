@@ -53,4 +53,40 @@ app.post("/", async (req, res) => {
     res.status(err.status).json({ message: err.message });
   }
 });
+// Get one
+app.get("/:id", getUserByID, async (req, res) => {
+  try {
+    res.status(200).json(res.user);
+  } catch (err) {
+    res.status(err.status).json({ message: err.message });
+  }
+});
+// https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
+// Patch one
+app.patch("/:id", getUserByID, async (req, res) => {
+  try {
+    //
+    const userByID = await UserModel.findByIdAndUpdate(
+      req.params.id,
+      {
+        name: req.params.name || res.user.name,
+        city: req.params.city || res.user.city,
+      },
+      { new: true }
+    );
+    res.status(200).json({ message: "This user got Update successfully" });
+  } catch (err) {
+    res.status(err.status).json({ message: err.message });
+  }
+});
+// Delete one
+
+app.delete("/:id", getUserByID, async (req, res) => {
+  try {
+    const deleteUserById = await UserModel.findOneAndDelete(req.params.id);
+    res.status(200).json({ message: "This user has been deleted" });
+  } catch (err) {
+    res.status(err.status).json({ message: err.message });
+  }
+});
 module.exports = app;
