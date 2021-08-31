@@ -28,6 +28,29 @@ const getUserByID = async (req, res, next) => {
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
+  res.user = userByID;
+  next();
 };
-
+// Get All
+app.get("/", async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(err.status).json({ message: err.message });
+  }
+});
+// Add new one
+app.post("/", async (req, res) => {
+  try {
+    const newUser = new UserModel({
+      name: req.body.name,
+      city: req.body.city,
+    });
+    const user = await newUser.save();
+    res.status(200).json({ message: "New User been created" });
+  } catch (err) {
+    res.status(err.status).json({ message: err.message });
+  }
+});
 module.exports = app;
