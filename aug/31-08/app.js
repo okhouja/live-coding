@@ -65,7 +65,7 @@ app.get("/:id", getUserByID, async (req, res) => {
 // Patch one
 app.patch("/:id", getUserByID, async (req, res) => {
   try {
-    //
+    //                          id, the update, options, callback
     const userByID = await UserModel.findByIdAndUpdate(
       req.params.id,
       {
@@ -74,7 +74,9 @@ app.patch("/:id", getUserByID, async (req, res) => {
       },
       { new: true }
     );
-    res.status(200).json({ message: "This user got Update successfully" });
+    res
+      .status(200)
+      .json({ message: "This user got Update successfully", userByID });
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
@@ -84,7 +86,9 @@ app.patch("/:id", getUserByID, async (req, res) => {
 app.delete("/:id", getUserByID, async (req, res) => {
   try {
     const deleteUserById = await UserModel.findOneAndDelete(req.params.id);
-    res.status(200).json({ message: "This user has been deleted" });
+    res
+      .status(200)
+      .json({ message: "This user has been deleted", deleteUserById });
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
