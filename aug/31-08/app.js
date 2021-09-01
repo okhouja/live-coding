@@ -48,7 +48,7 @@ app.post("/", async (req, res) => {
       city: req.body.city,
     });
     const user = await newUser.save();
-    res.status(200).json({ message: "New User been created" });
+    res.status(200).json({ message: "New User been created", user });
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
@@ -61,16 +61,19 @@ app.get("/:id", getUserByID, async (req, res) => {
     res.status(err.status).json({ message: err.message });
   }
 });
+
 // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
+
 // Patch one
+
 app.patch("/:id", getUserByID, async (req, res) => {
   try {
     //                          id, the update, options, callback
     const userByID = await UserModel.findByIdAndUpdate(
       req.params.id,
       {
-        name: req.params.name || res.user.name,
-        city: req.params.city || res.user.city,
+        name: req.body.name || res.user.name,
+        city: req.body.city || res.user.city,
       },
       { new: true }
     );
@@ -85,7 +88,7 @@ app.patch("/:id", getUserByID, async (req, res) => {
 
 app.delete("/:id", getUserByID, async (req, res) => {
   try {
-    const deleteUserById = await UserModel.findOneAndDelete(req.params.id);
+    const deleteUserById = await UserModel.findByIdAndDelete(req.params.id);
     res
       .status(200)
       .json({ message: "This user has been deleted", deleteUserById });
