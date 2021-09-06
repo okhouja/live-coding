@@ -48,7 +48,7 @@ app.post("/", async (req, res) => {
       city: req.body.city,
     });
     const user = await newUser.save();
-    res.status(200).json({ message: "New User been created", user });
+    res.status(201).json({ message: "New User been created", user });
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
@@ -75,7 +75,10 @@ app.patch("/:id", getUserByID, async (req, res) => {
         name: req.body.name || res.user.name,
         city: req.body.city || res.user.city,
       },
-      { new: true }
+      {
+        new: true,
+        // see only name als results
+      }
     );
     res
       .status(200)
