@@ -1,13 +1,53 @@
 const AuthorModel = require("../model/authorModel");
-const bookController = {};
+const booksController = {};
 
-bookController.getAll = async (req, res) => {
+booksController.getAll = async (req, res) => {
   try {
     const authors = await AuthorModel.find();
     res.status(200).json(authors);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    // res.status(500).json({
+    res.status(err.status).json({
+      message: err.message,
+    });
   }
 };
 
-module.exports = bookController;
+// {
+//   authorName: String,
+//     books[
+//       {
+//         title: String,
+//         issueYear: Number,
+//       }, {
+//         title: String,
+//         issueYear: Number,
+//       }, {
+//         title: String,
+//         issueYear: Number,
+//       }
+//     ];
+// }
+booksController.addNewAuthor = async (req, res) => {
+  //console.log(req.body);
+
+  const author = new AuthorModel({
+    authorName: req.body.name,
+  });
+  req.body.books.map((book) => {
+    author.books.push({ title: book.title, issueYear: book.issueYear });
+  });
+  try {
+    await author.save();
+    res.status(201).json({
+      message: "This author been added",
+      author,
+    });
+  } catch (err) {
+    res.status(err.status).json({
+      message: err.message,
+    });
+  }
+};
+
+module.exports = booksController;
