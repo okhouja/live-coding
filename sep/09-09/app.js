@@ -26,7 +26,8 @@ app.route("/").get(bookController.getAll).post(bookController.addNewAuthor);
 app
   .route("/:id")
   .get(bookController.getOneByID)
-  .delete(bookController.deleteOneByID);
+  .delete(bookController.deleteOneByID)
+  .put(bookController.updateOneById);
 
 // PUT later
 // PATCH later

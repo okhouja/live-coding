@@ -7,9 +7,12 @@ const bookSchema = new mongoose.Schema({
   issueYear: Number,
 });
 
-const authorSchema = new mongoose.Schema({
-  authorName: String,
-  books: [bookSchema],
-});
+const authorSchema = new mongoose.Schema(
+  {
+    authorName: String,
+    books: [bookSchema],
+  },
+  { versionKey: "_updated version" }
+);
 
 module.exports = mongoose.model("author", authorSchema);

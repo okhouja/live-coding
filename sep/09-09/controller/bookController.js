@@ -82,4 +82,24 @@ booksController.deleteOneByID = async (req, res) => {
     });
   }
 };
+
+// Put or Update by IDs
+booksController.updateOneById = async (req, res) => {
+  try {
+    const author = await AuthorModel.findByIdAndUpdate(
+      { _id: req.params.id },
+      {
+        $set: {
+          authorName: req.body.authorName,
+          books: req.body.books,
+        },
+      }
+    );
+    res
+      .status(200)
+      .json({ message: "This author has been updated successfully", author });
+  } catch (err) {
+    res.status(err.status).json({ error: err.message });
+  }
+};
 module.exports = booksController;
