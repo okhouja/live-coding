@@ -90,8 +90,11 @@ booksController.updateOneById = async (req, res) => {
       { _id: req.params.id },
       {
         $set: {
-          authorName: req.body.authorName,
-          books: req.body.books,
+          authorName: req.body.name,
+          books: req.body.books.map((book) => ({
+            title: book.title,
+            issueYear: book.issueYear,
+          })),
         },
       }
     );
