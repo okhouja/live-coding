@@ -12,7 +12,16 @@ const authorSchema = new mongoose.Schema(
     authorName: String,
     books: [bookSchema],
   },
-  { versionKey: "_updated version" }
+
+  // removing password and __v from the returned data from api
+  {
+    toJSON: {
+      transform: function (doc, ret) {
+        delete ret.password;
+        delete ret.__v;
+      },
+    },
+  }
 );
 
 module.exports = mongoose.model("author", authorSchema);
