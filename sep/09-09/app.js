@@ -28,7 +28,10 @@ app
   .get(bookController.getOneByID)
   .delete(bookController.deleteOneByID)
   .put(bookController.updateOneById);
+//   .patch(bookController.authorCheck);
 
-// PUT later
-// PATCH later
+// app
+//   .route("/addbooks/:id")
+//   .post(booksController.authorCheck, booksController.addMoreBooksToAuthor);
+
 module.exports = app;
