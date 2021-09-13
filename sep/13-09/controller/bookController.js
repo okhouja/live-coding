@@ -21,6 +21,16 @@ booksControllers.getAllBooks = async (req, res) => {
   }
 };
 // POST author
+booksControllers.addAuthor = async (req, res) => {
+  try {
+    const author = new Author({
+      _id: new mongoose.Types.ObjectId(),
+      authorName: req.body.name,
+    });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
 
 // POST book
 
