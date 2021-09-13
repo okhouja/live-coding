@@ -23,6 +23,11 @@ app
   .route("/")
   .get(booksControllers.getAllAuthors)
   .post(booksControllers.addAuthor);
+app
+  .route("/author/:id")
+  .get(booksControllers.checkAuthor, booksControllers.getOneByID)
+  .delete(booksControllers.checkAuthor, booksControllers.deleteById);
+
 // GET all books
 // POST new book for an author
 app.route("/book").get(booksControllers.getAllBooks);
@@ -30,8 +35,9 @@ app.route("/book/:id").post(booksControllers.addNewBook);
 // GET all books from an author
 // using author id
 
-// DEL later
-// PUT
+// DEL
+
+// PUT later
 // PATCH
 
 module.exports = app;
