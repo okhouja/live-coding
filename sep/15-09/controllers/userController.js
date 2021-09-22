@@ -9,7 +9,17 @@ const userControllers = {};
 userControllers.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
-    res.status(200).json(users);
+    res.status(200).render("data", {
+      data: users.map((user) => {
+        return {
+          _id: user._id,
+          username: user.username,
+          password: user.password,
+          role: user.role,
+          avatar: user.avatar,
+        };
+      }),
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -21,12 +31,12 @@ userControllers.addUser = async (req, res) => {
       .status(400)
       .send("This name is already been used <br> <a href='/'>Try again</a>");
   }
-
+  //
   req.session.done = true;
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     console.log(hashedPassword);
-    // there will be a  for file
+    // Multer middleware will create req.file
     console.log(req.file);
     const newUser = await new User({
       _id: mongoose.Types.ObjectId(),
@@ -36,7 +46,6 @@ userControllers.addUser = async (req, res) => {
       role: "USER",
       avatar: req.file.path,
     });
-    console.log(newUser);
     newUser.save();
     res.status(200).send("New user been added <a href='/login'>login</a>");
   } catch (err) {
@@ -70,8 +79,10 @@ userControllers.login = async (req, res) => {
       });
       session.save();
       res.status(200).render("login", {
-        title: `Welcome ${username}`,
+        title: `Welcome`,
         done: true,
+        username: user.username,
+        avatar: user.avatar,
         errors: req.session.errors,
       });
       req.session.errors = null;
@@ -94,8 +105,18 @@ userControllers.getOne = async (req, res) => {
   const username = req.params.name;
   try {
     //const user =  await User.findOne({username:username})
-    const user = await User.findOne({ username });
-    res.status(200).json(user);
+    const user = await User.find({ username });
+    res.status(200).render("data", {
+      data: user.map((user) => {
+        return {
+          _id: user._id,
+          username: user.username,
+          password: user.password,
+          role: user.role,
+          avatar: user.avatar,
+        };
+      }),
+    });
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
@@ -105,7 +126,13 @@ userControllers.deleteOneById = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(id);
     // logout
-    res.status(200).json({ message: "This user is deleted ", user });
+    res.clearCookie("session_id");
+    res.clearCookie("role");
+    res.clearCookie("user_id");
+    res.status(200).json({
+      message: "This user is deleted and soon you will be logged out",
+      user,
+    });
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
