@@ -7,6 +7,7 @@ const allowedAccess = require("../controllers/authController");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    // function to check
     cb(null, "./uploads/");
   },
   filename: function (req, file, cb) {
