@@ -58,6 +58,15 @@ booksControllers.addAuthor = async (req, res) => {
 {
 	"title":"Day"
 }
+
+{
+	"username":"Omar",
+    "password":"123456"
+	"books":[
+		{"title":"Walking With Rain","issueYear":2015},{"title":"How to sleep with Light ","issueYear":2005},{"title":"Before Life","issueYear":2019}
+		]
+}
+
 */
 booksControllers.addNewBook = async (req, res) => {
   Author.findById(req.params.id)
